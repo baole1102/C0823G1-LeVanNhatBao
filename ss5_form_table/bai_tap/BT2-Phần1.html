@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .head{
+            color: blue;
+            font-size: 17px;
+        }
+        .container{
+            border: 1px solid black;
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form  method="post" action="https://www.google.com/search?client=opera&q=gg+dịch&sourceid=opera&ie=UTF-8&oe=UTF-8">
+        <table >
+            <tr style="background-color: orange">
+                <th style="padding: 5px 0 5px 0; color: aliceblue" colspan="2">SỞ THÍCH CỦA BẠN</th>
+            </tr>
+            <tr>
+                <td>
+                    <label class="head" for="name">Họ và tên</label>
+                </td>
+                <td>
+                    <input type="text" id="name" name="name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="head" for="email" name="email">Email</label>
+                </td>
+                <td>
+                    <input type="text" id="email">
+                </td>
+            </tr>
+            <tr>
+                <td ><label class="head">Sở thích</label></td>
+                <td style="color: orange">
+                    <!--                    <label for=""></label>-->
+                    <input type="checkbox" name="hobby"> Thể thao
+                    <input type="checkbox" name="hobby"> Âm nhạc
+                    <input type="checkbox" name="hobby"> Đọc sách <br>
+                    <input type="checkbox" name="hobby"> Lướt wed
+                    <input type="checkbox" name="hobby"> Chơi game
+                    <input type="checkbox" name="hobby"> Điện ảnh <br>
+                    <input type="checkbox" name="hobby"> Du lịch
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" name="Submit Form" value="Gửi thông tin">
+                    <input type="reset" name="Reset Form" value="Nhập lại">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

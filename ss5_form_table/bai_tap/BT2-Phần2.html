@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .title{
+            color: #5454c2;
+        }
+        div{
+            background-color: #f1dcbb;
+            width: 260px;
+            border: 1px solid black;
+        }
+        table{
+            padding-left: 2px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <form action="https://www.google.com/search?client=opera&q=gg+dịch&sourceid=opera&ie=UTF-8&oe=UTF-8" method="post">
+        <table>
+            <tr style="background-color: aquamarine">
+                <th style="text-align: left; padding: 5px 10 5px 10px;   font-size: 17px; color: #7373ea" colspan="2">ĐĂNG KÝ HỌC VIÊN</th>
+            </tr>
+            <!--      HO VA TEN-->
+            <tr>
+                <td>
+                    <label class="title" for="name">Họ và tên</label>
+                </td>
+                <td>
+                    <input type="text" name="name" id="name">
+                </td>
+            </tr>
+            <!--      NGAY SINH-->
+            <tr>
+                <td>
+                    <label class="title" for="day">Ngày sinh</label>
+                </td>
+                <td>
+                    <input type="text" name="day" id="day">
+                </td>
+            </tr>
+            <!--      GIOI TINH-->
+            <tr>
+                <td>
+                    <label class="title" for="gender">Giới tính</label>
+                </td>
+                <td>
+                    <input type="radio" name="gender" id="gender"> Nam
+                    <input type="radio" name="gender" id="gender"> Nữ
+                </td>
+            </tr>
+            <!--      ADDRESS-->
+            <tr>
+                <td>
+                    <label class="title" for="address">Địa chỉ</label>
+                </td>
+                <td>
+                    <textarea name="address" id="address"></textarea>
+                </td>
+            </tr>
+            <!--      CLASS-->
+            <tr>
+                <td>
+                    <p class="title">Lớp</p>
+                </td>
+                <td>
+                    <select name="choise-class" >
+                        <option name="choise-class" >--Chọn lớp--</option>
+                        <option name="choise-class">Lớp 1</option>
+                        <option name="choise-class">Lớp 2</option>
+                    </select>
+                </td>
+            </tr>
+            <!--      EMAIL-->
+            <tr>
+                <td>
+                    <label class="title" for="email">Email</label>
+                </td>
+                <td>
+                    <input type="text" name="email" id="email">
+                </td>
+            </tr>
+            <!--      PHONE-->
+            <tr>
+                <td>
+                    <label class="title" for="phone">Điện thoại</label>
+                </td>
+                <td>
+                    <input type="text" name="phone" id="phone">
+                </td>
+            </tr>
+            <!--      BUTTON-->
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" name="Submit" value="Đăng ký">
+                    <input type="reset" name="Reset" value="Nhập lại">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
