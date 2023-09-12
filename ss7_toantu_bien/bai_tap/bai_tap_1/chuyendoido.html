@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input placeholder="Độ c (Celsius)" id="convert" type="number" value="Độ c (Celsius)">
+    <button onclick="submitSucees()" type="submit" value="submit">Submit</button>
+    <p id="dapan">Result:</p>
+<script>
+    function submitSucees(){
+        var chuyendoi = document.getElementById('convert').value;
+        var sohoc = parseInt(chuyendoi);
+        var result = (9/5)*sohoc + 32;
+        // document.getElementById('dapan').innerHTML = "Result" + result
+        document.getElementById("dapan").innerHTML = 'Result:'+ '' +result;
+        // document.write("Result", result);
+
+    }
+</script>
+
+</body>
+</html>

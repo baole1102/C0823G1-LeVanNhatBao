@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+    <table>
+    <tr>
+        <td>
+            <input placeholder="Nhập số thứ nhất" id="number_1" type="number">
+        </td>
+        <td>
+            <input placeholder="Nhập số thứ hai" type="number" id="number_2">
+        </td>
+        <td>
+            <button onclick="addNumber ()">Cộng</button>
+        </td>
+        <td>
+            <button onclick="minusNumber ()">Trừ</button>
+        </td>
+    </tr>
+    </table>
+<h3> Result:</h3>
+<p id="result"></p>
+<script>
+    function addNumber() {
+        let number1 = +document.getElementById("number_1").value;
+        let number2 = +document.getElementById('number_2').value;
+        let resultAdd = number1 + number2 ;
+        document.getElementById('result').innerHTML = resultAdd;
+        // console.log(resultAdd);
+
+    }
+    function minusNumber() {
+        let number1 = document.getElementById("number_1").value;
+        let number2 = document.getElementById('number_2').value;
+        let resultMinus = number1 - number2 ;
+        document.getElementById('result').innerHTML = resultMinus;
+    }
+
+</script>
+</body>
+</html>
