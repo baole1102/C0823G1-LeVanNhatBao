@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numberOne = +prompt(" Input number 1 ");
+    let numberTwo =+ prompt(" Input number 2 ");
+    let numberThree = +prompt(" Input number 3 ");
+
+    if (numberOne > numberTwo && numberOne > numberThree){
+        alert("Number 1 lớn nhất");
+    }else if (numberOne < numberTwo && numberOne > numberThree){
+        alert("NUmber 2 lớn nhất");
+    }else if ( numberOne < numberTwo && numberTwo < numberThree){
+        alert("NUmber 3 lớn nhất");
+    }else if (numberThree > numberOne && numberThree < numberTwo){
+        alert("NUmber 2 lớn nhất");
+    }
+</script>
+</body>
+</html>

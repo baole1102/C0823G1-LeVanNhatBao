@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table cellspacing="5">
+    <tr>
+        <th colspan="2" style=" font-size: 20px;  color: red">Tính chỉ số cân nặng</th>
+    </tr>
+    <tr>
+        <td>
+            <label for="weight">Nhập cân nặng: (kg)</label>
+        </td>
+        <td>
+            <input type="text" id="weight" >
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="thall">Nhập chiều cao: (m)</label>
+        </td>
+        <td>
+            <input type="text" id="thall" >
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="examine()">Kiểm tra</button>
+        </td>
+    </tr>
+</table>
+<p id="result"></p>
+<script>
+function examine () {
+    let weight = document.getElementById('weight').value;
+    let thall = document.getElementById('thall').value;
+    let bmi = +(weight /((thall/100)*(thall/100)) );
+    if (bmi < 18) {
+        // document.write("Underweight");
+        document.getElementById('result').innerHTML = 'Chỉ số BMI là:'+ bmi +"" +".Gầy quá. Nên kiếm người yêu để tăng cân";
+    } else if (bmi < 25.0){
+        //document.write("Normal");
+        document.getElementById('result').innerHTML = 'Chỉ số BMI là:'+ bmi + ".Bình thường nè. Ăn thoải mái mập thì giảm cân";
+    } else if (bmi < 30.0) {
+        // document.write("Overweight");
+        document.getElementById('result').innerHTML = 'Chỉ số BMI là:'+ bmi + ".Hơi múp. Nên ăn ít lại ";
+    } else {
+        document.getElementById('result').innerHTML = 'Chỉ số BMI là:'+ bmi + ".Múp quá. Nên vận động nhiều và ăn ít lại thôi";
+        // document.write("Obese");
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <input placeholder="Độ C" type="text" id="number">
+    </tr>
+
+    <tr>
+        <button  onclick="convert()">Chuyển đổi</button>
+    </tr>
+</table>
+<p id="result"></p>
+<script>
+    function convert() {
+       let numberC = document.getElementById("number").value;
+       let resultConvertF = numberC*(9/5)+32;
+       document.getElementById('result').innerHTML= 'Result:' + resultConvertF;
+    }
+</script>
+</body>
+</html>

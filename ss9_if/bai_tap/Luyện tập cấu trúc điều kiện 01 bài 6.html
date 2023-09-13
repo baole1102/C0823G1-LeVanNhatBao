@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+        let saleFigure = prompt("Input sale figure");
+        let lever1 = 0.1;
+        let lever2 = 0.15;
+        let lever3 = 0.2;
+        if (saleFigure>= 1000){
+            let pinkFlower = saleFigure * lever3;
+            document.write('pinkFLower:',pinkFlower);
+        } else if (saleFigure>= 800){
+            let pinkFlower = saleFigure * lever2;
+            document.write('pinkFLower:',pinkFlower);
+            // alert('Hoa hồng nhân được 8%')
+        } else {
+            let pinkFlower = saleFigure * lever1;
+            document.write('pinkFLower:',pinkFlower);
+        }
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table cellpadding="5">
+        <tr>
+            <th>Số liệu chuyển đổi m sang feet</th>
+            <th></th>
+        </tr>
+        <tr>
+           <td>
+               <input id="number" style="width: 200px" type="text" placeholder="Nhập số liệu cần chuuyển đổi...">
+           </td>
+            <td>
+                <button onclick="convert ()">Chuyển đổi</button>
+            </td>
+        </tr>
+    </table>
+    <p id="result"></p>
+<script>
+
+    function convert() {
+        let number = document.getElementById("number").value;
+        let convertNumber = number*3.2808;
+        document.getElementById("result").innerHTML = 'Result:'+ convertNumber;
+    }
+</script>
+</body>
+</html>
