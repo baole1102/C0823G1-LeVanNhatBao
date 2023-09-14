@@ -3,8 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .container {
+            margin-left: 16px;
+        }
+
+        input {
+            height: 20px;
+            width: 200px;
+        }
+
+        .button {
+            margin-left: 114px;
+            width: 80px;
+            height: 30px;
+            background-color: orange;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-
+<div class="container">
+    <h2>Tính cước tiền điện thoại</h2>
+</div>
+<table>
+    <tr>
+        <td>
+            <label for="minuteA">Minute =</label>
+        </td>
+        <td>
+            <input id="minuteA" type="text">
+        </td>
+    </tr>
+</table>
+<div>
+    <button class="button" onclick="tranfer()">Kết quả</button>
+</div>
+<p id="result"></p>
+<script>
+    const feeInitial = 25000;
+    function tranfer() {
+        let minuteA = + document.getElementById('minuteA').value;
+        if (minuteA > 200){
+            let feeOne = feeInitial + (minuteA - 200)*200 + 50*600 + 150*400
+            document.getElementById('result').innerHTML = "Số tiền trả phí cước là:" + feeOne + "VND"
+        } else if (minuteA <= 200 && minuteA > 50 ){
+            let feeTwo = feeInitial + (minuteA - 50)*400 + 50*600;
+            document.getElementById('result').innerHTML = "Số tiền trả phí cước là:" + feeTwo + "VND"
+        }else {
+            let feeThree = feeInitial + minuteA*600;
+            document.getElementById('result').innerHTML = "Số tiền trả phí cước là:" + feeThree + "VND"
+        }
+    }
+</script>
 </body>
 </html>
