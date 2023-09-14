@@ -5,22 +5,36 @@
     <title>Title</title>
 </head>
 <body>
+<table>
+    <tr>
+        <td>
+            <label for="number">Nhập số doanh thu:</label>
+            <input type="text" id="number">
+        </td>
+        <td>
+            <button onclick="oversee()">Kiểm tra</button>
+        </td>
+    </tr>
+</table>
+<p id="result"></p>
 <script>
-        let saleFigure = prompt("Input sale figure");
+    function oversee() {
         let lever1 = 0.1;
         let lever2 = 0.15;
         let lever3 = 0.2;
-        if (saleFigure>= 1000){
-            let pinkFlower = saleFigure * lever3;
-            document.write('pinkFLower:',pinkFlower);
-        } else if (saleFigure>= 800){
-            let pinkFlower = saleFigure * lever2;
-            document.write('pinkFLower:',pinkFlower);
-            // alert('Hoa hồng nhân được 8%')
+        let saleFigure = +document.getElementById('number').value;
+        if (saleFigure >= 1000000) {
+            var pinkFlower = saleFigure * lever3;
+            document.getElementById('result').innerHTML = 'pinkFLower:'+pinkFlower;
+        } else if (saleFigure <= 800000) {
+            var pinkFlower = saleFigure * lever2;
+            document.getElementById('result').innerHTML = 'pinkFLower:'+pinkFlower;
         } else {
-            let pinkFlower = saleFigure * lever1;
-            document.write('pinkFLower:',pinkFlower);
+            var pinkFlower = saleFigure * lever1;
+            document.getElementById('result').innerHTML = ('pinkFLower:', pinkFlower);
         }
+    }
+
 </script>
 </body>
 </html>

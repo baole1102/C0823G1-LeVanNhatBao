@@ -5,13 +5,28 @@
     <title>Title</title>
 </head>
 <body>
+<table>
+    <tr>
+        <td>
+            <label for="number">Nhập số nguyên:</label>
+            <input type="text" id="number">
+        </td>
+        <td>
+            <button onclick="oversee()">Kiểm tra</button>
+        </td>
+    </tr>
+</table>
+<p id="result"></p>
 <script>
-    let integer = prompt("Nhập số nguyên a");
-    if (integer>0) {
-        alert("Số nguyên a lớn hơn 0 ")
-    } else {
-        alert("Số nguyên a bé hơn 0")
+    function oversee(){
+        let numberA = + document.getElementById('number').value;
+        if (numberA > 0){
+            document.getElementById('result').innerHTML= "Số nguyên a lớn hơn 0"
+        }else if (numberA < 0){
+            document.getElementById('result').innerHTML= "Số nguyên a bé hơn 0"
+        }
     }
+
 </script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table cellpadding="5">
+    <tr>
+        <th>Nhập chiều dài hình vuông</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            <input id="number" style="width: 200px" type="text" placeholder="Chiều dài hình vuông">
+        </td>
+        <td>
+            <button onclick="calculate ()">Tính</button>
+        </td>
+    </tr>
+</table>
+<p id="result"></p>
+<script>
+    function calculate() {
+        let number = document.getElementById("number").value;
+        let acreage = number * number ;
+        if (acreage < 0) {
+            document.getElementById("result").innerHTML = 'Result: Chiều dài không đúng';
+        } else {
+            document.getElementById("result").innerHTML = 'Result: Diện tích hình vuông là '+acreage + "m2";
+        }
+    }
+</script>
+
+</body>
+</html>

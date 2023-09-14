@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            height: 20px;
+            width: 200px;
+        }
+
+        .button {
+            margin-left: 114px;
+            width: 80px;
+            height: 30px;
+            background-color: orange;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h2>Kiểm tra giá điện 1 tháng</h2>
+    <span>Nhập các chữ số điện :</span>
+</div>
+<table cellspacing="15">
+    <tr>
+        <td>
+            <label for="numberA">a =</label>
+        </td>
+        <td>
+            <input id="numberA" type="text">
+        </td>
+    </tr>
+</table>
+<div>
+    <button class="button" onclick="tranfer()">Kết quả</button>
+</div>
+<p id="result"></p>
+<script>
+    let priceLevelOne = 1.678;
+    let priceLevelTwo = 2.014;
+    let priceLevelThree = 2.834;
+
+    function tranfer() {
+        let numberA = +document.getElementById('numberA').value;
+        if (numberA > 0 && numberA <= 100) {
+            var priceEletric = numberA * priceLevelOne ;
+            var sumPriceEletric = priceEletric*0.1+priceEletric;
+            document.getElementById('result').innerHTML = "Kết quả: tiền điện tháng này là: " + sumPriceEletric;
+        } else if (numberA > 100 && numberA <= 300) {
+            var priceEletric = numberA * priceLevelTwo;
+            var sumPriceEletric = priceEletric*0.1+priceEletric;
+            document.getElementById('result').innerHTML = "Kết quả: tiền điện tháng này là: " +sumPriceEletric;
+        } else if (numberA > 300) {
+            var priceEletric = numberA * priceLevelThree;
+            var sumPriceEletric = priceEletric*0.1+priceEletric;
+            document.getElementById('result').innerHTML = "Kết quả: tiền điện tháng này là: " + sumPriceEletric;
+        } else {
+            document.getElementById('result').innerHTML = "Kết quả: Số liệu không hợp lệ";
+        }
+    }
+</script>
+</body>
+</html>

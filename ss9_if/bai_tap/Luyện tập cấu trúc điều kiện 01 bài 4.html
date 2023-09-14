@@ -5,20 +5,50 @@
     <title>Title</title>
 </head>
 <body>
+<table>
+    <tr>
+        <th>
+            <p>Nhập số liệu thứ 1</p>
+        </th>
+        <th>
+            <p>Nhập số liệu thứ 2</p>
+        </th>
+        <th>
+            <p>Nhập số liệu thứ 3</p>
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="number-one">
+        </td>
+        <td>
+            <input type="text" id="number-two">
+        </td>
+        <td>
+            <input type="text" id="number-three">
+        </td>
+        <td>
+            <button onclick="oversee()">Kiểm tra</button>
+        </td>
+    </tr>
+</table>
+<p id="result"></p>
 <script>
-    let numberOne = +prompt(" Input number 1 ");
-    let numberTwo =+ prompt(" Input number 2 ");
-    let numberThree = +prompt(" Input number 3 ");
-
-    if (numberOne > numberTwo && numberOne > numberThree){
-        alert("Number 1 lớn nhất");
-    }else if (numberOne < numberTwo && numberOne > numberThree){
-        alert("NUmber 2 lớn nhất");
-    }else if ( numberOne < numberTwo && numberTwo < numberThree){
-        alert("NUmber 3 lớn nhất");
-    }else if (numberThree > numberOne && numberThree < numberTwo){
-        alert("NUmber 2 lớn nhất");
+    function oversee() {
+        let numberOne = +document.getElementById('number-one').value;
+        let numberTwo = +document.getElementById('number-two').value;
+        let numberThree = +document.getElementById('number-three').value;
+        if (numberOne > numberTwo && numberOne > numberThree) {
+            document.getElementById('result').innerHTML = ("Number 1 lớn nhất");
+        } else if (numberOne < numberTwo && numberOne > numberThree) {
+            document.getElementById('result').innerHTML = ("Number 2 lớn nhất");
+        } else if (numberOne < numberTwo && numberTwo < numberThree) {
+            document.getElementById('result').innerHTML = ("Number 3 lớn nhất");
+        } else if (numberThree > numberOne && numberThree < numberTwo) {
+            document.getElementById('result').innerHTML = ("Number 2 lớn nhất");
+        }
     }
+
 </script>
 </body>
 </html>

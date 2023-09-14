@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            height: 20px;
+            width: 200px;
+        }
+
+        .button {
+            margin-left: 114px;
+            width: 80px;
+            height: 30px;
+            background-color: orange;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h2>Kiểm tra 3 số thực là cạnh của 1 tam giác</h2>
+    <span>Nhập các tham số của tam giác:</span>
+</div>
+<table cellspacing="15">
+    <tr>
+        <td>
+            <label for="numberA">a =</label>
+        </td>
+        <td>
+            <input id="numberA" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="numberB">b =</label>
+        </td>
+        <td>
+            <input id="numberB" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="numberC">c =</label>
+        </td>
+        <td>
+            <input id="numberC" type="text">
+        </td>
+    </tr>
+</table>
+<div>
+    <button class="button" onclick="tranfer()">Kết quả</button>
+</div>
+<p id="result"></p>
+<script>
+    function tranfer() {
+        let numberA = +document.getElementById('numberA').value;
+        let numberB = +document.getElementById('numberB').value;
+        let numberC = +document.getElementById('numberC').value;
+        if (numberA > 0 && numberC > 0 && numberB > 0) {
+            let conditionOne = numberA + numberB;
+            let conditionTwo = numberB + numberC;
+            let conditionThree = numberA + numberC;
+            if (conditionOne > numberC && conditionTwo > numberA && conditionThree > numberB) {
+                document.getElementById('result').innerHTML = "Giá trị a,b,c là một tam giác ";
+            } else {
+                document.getElementById('result').innerHTML = "Giá trị a,b,c không là một tam giác ";
+            }
+        } else {
+            document.getElementById('result').innerHTML = "Giá trị a,b,c không là một tam giác ";
+        }
+
+
+    }
+</script>
+</body>
+</html>

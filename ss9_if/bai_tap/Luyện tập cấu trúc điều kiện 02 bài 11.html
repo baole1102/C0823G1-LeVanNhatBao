@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            height: 20px;
+            width: 200px;
+        }
+
+        .button {
+            margin-left: 114px;
+            width: 80px;
+            height: 30px;
+            background-color: orange;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h2>Tính thuế thu nhập cá nhân</h2>
+    <span>Nhập các khoản dưới đây:</span>
+</div>
+<table cellspacing="15">
+    <tr>
+        <td>
+            <label for="numberA">Thu nhập tháng =</label>
+        </td>
+        <td>
+            <input id="numberA" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="numberB">Khoản miễn thuế =</label>
+        </td>
+        <td>
+            <input id="numberB" type="text">
+        </td>
+        <td>
+            <span>(Tiền phụ cấp: Tiền ăn, tiền đi lại,..)</span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="numberC">Người phụ thuộc =</label>
+        </td>
+        <td>
+            <input id="numberC" type="text">
+        </td>
+        <td>
+            <span>( Số người trong gia đình )</span>
+        </td>
+    </tr>
+</table>
+<div>
+    <button class="button" onclick="tranfer()">Kết quả</button>
+</div>
+<p id="result"></p>
+<script>
+    // số thuế
+    let levelOne = 0.05; //TN <= 5 tr
+    let levelTwo = 0.1; // 15 >= TN > 5 tr
+    let levelThree = 0.15; // 25>=TN> 15 tr
+    let levelFor = 0.2; // Tn 50>=x> 25tr
+    let levelFive = 0.25; // Tn x> 50tr
+
+    function tranfer() {
+        let numberA = +document.getElementById('numberA').value;
+        let numberB = +document.getElementById('numberB').value;
+        let numberC = +document.getElementById('numberC').value;
+        let dependent = numberC*4400000; // thuế phụ thuộc = đầu người * 4400000
+        let salary = numberA - numberB - dependent;
+        if (salary > 5000000 && salary <= 15000000) {
+            var tax = salary * levelTwo - 250000;
+            document.getElementById('result').innerHTML = "Số thuế thu nhập cá nhân phải nộp trong tháng 9 năm 2023 là:" + tax +"VNĐ";
+        } else if (salary > 15000000 && salary <= 25000000) {
+            var tax = salary * levelThree - 750000;
+            document.getElementById('result').innerHTML = "Số thuế thu nhập cá nhân phải nộp trong tháng 9 năm 2023 là:" + tax +"VNĐ" ;
+        }else if (salary > 25000000 && salary <= 50000000) {
+            var tax = salary * levelFor - 1600000;
+            document.getElementById('result').innerHTML = "Số thuế thu nhập cá nhân phải nộp trong tháng 9 năm 2023 là:" + tax +"VNĐ";
+        }else if (salary > 50000000) {
+            var tax = salary * levelFive - 3250000;
+            document.getElementById('result').innerHTML = "Số thuế thu nhập cá nhân phải nộp trong tháng 9 năm 2023 là:" + tax +"VNĐ";
+        }else if (salary < 5000000) {
+            var tax = salary * levelOne;
+            document.getElementById('result').innerHTML = "Số thuế thu nhập cá nhân phải nộp trong tháng 9 năm 2023 là:" + tax +"VNĐ";
+        }else {
+            document.getElementById('result').innerHTML = "Không cần đóng thuế"
+        }
+    }
+</script>
+</body>
+</html>

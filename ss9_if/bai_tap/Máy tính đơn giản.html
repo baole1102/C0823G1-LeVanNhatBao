@@ -10,10 +10,11 @@
         }
 
         .container {
-            border: 2px solid black;
+            border: 3px solid black;
             width: 200px;
             height: 230px;
         }
+
         .input {
             height: 20px;
         }
@@ -24,72 +25,95 @@
     <table cellpadding="5" cellspacing="7">
         <tr>
             <td colspan="4">
-                <input class="input" id="number" type="text">
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <button value="1" class="button" onclick="number__1()">1</button>
-            </td>
-            <td>
-                <button class="button" onclick="number__2()">2</button>
-            </td>
-            <td>
-                <button class="button"  onclick="number__3()">3</button>
-            </td>
-            <td>
-                <button class="button" onclick="mark__plus">+</button>
+                <input value="" placeholder="0" class="input" id="inputId" type="text">
             </td>
         </tr>
         <tr>
             <td>
-                <button class="button" onclick="number__4">4</button>
+                <button class="button" onclick="number('1')"> 1</button>
             </td>
             <td>
-                <button class="button" onclick="number__5">5</button>
+                <button class="button" onclick="number('2')"> 2</button>
             </td>
             <td>
-                <button class="button" onclick="number__6">6</button>
+                <button class="button" onclick="number('3')"> 3</button>
             </td>
             <td>
-                <button class="button" onclick="mark__minus">-</button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button class="button" onclick="number__7">7</button>
-            </td>
-            <td>
-                <button class="button" onclick="number__8">8</button>
-            </td>
-            <td>
-                <button class="button" onclick="number__9">9</button>
-            </td>
-            <td>
-                <button class="button" onclick="mark__multiply">*</button>
+                <button class="button" onclick="number('+')"> +</button>
             </td>
         </tr>
         <tr>
             <td>
-                <button class="button" onclick="mark__c">C</button>
+                <button class="button" onclick="number('4')"> 4</button>
             </td>
             <td>
-                <button class="button" onclick="number__0">0</button>
+                <button class="button" onclick="number('5')"> 5</button>
             </td>
             <td>
-                <button class="button" onclick="mark__equal">=</button>
+                <button class="button" onclick="number('6')"> 6</button>
             </td>
             <td>
-                <button class="button" onclick="mark__divide">/</button>
+                <button class="button" onclick="number('-')">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="button" onclick="number('7')">7</button>
+            </td>
+            <td>
+                <button class="button" onclick="number('8')"> 8</button>
+            </td>
+            <td>
+                <button class="button" onclick="number('9')"> 9</button>
+            </td>
+            <td>
+                <button class="button" onclick="number('*')">X</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="button" onclick="number('C')"> C</button>
+            </td>
+            <td>
+                <button class="button" onclick="number('0')"> 0</button>
+            </td>
+            <td>
+                <button class="button" onclick="number('=')">=</button>
+            </td>
+            <td>
+                <button class="button" onclick="number('/')">/</button>
             </td>
         </tr>
     </table>
 </div>
 <script>
-    function number__1() {
-        // let numberOne = document.getElementById('number').value;
-        let figureOne =1;
-        document.getElementById('number').innerText = figureOne;
+    function number(x) {
+        let result = document.getElementById('inputId').value;
+        // console.log(x)
+        switch (x) {
+            case 0:
+            case '1':
+            case "2":
+            case "3":
+            case "4":
+            case "5":
+            case "6":
+            case "7":
+            case "8":
+            case "9":
+            case "+":
+            case "-":
+            case "*":
+            case "/":
+                result = result + x;
+                break;
+            case "=":
+                result = eval(result);
+                break;
+            case "C" :
+                result = "";
+        }
+        document.getElementById('inputId').value= result;
     }
 </script>
 </body>

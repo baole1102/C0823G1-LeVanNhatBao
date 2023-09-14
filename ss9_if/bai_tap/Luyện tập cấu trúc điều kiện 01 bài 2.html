@@ -5,13 +5,29 @@
     <title>Title</title>
 </head>
 <body>
+<table>
+    <tr>
+        <td>
+            <label for="age">Nhập tuổi:</label>
+            <input type="text" id="age">
+        </td>
+        <td>
+            <button onclick="oversee()">Kiểm tra</button>
+        </td>
+    </tr>
+</table>
+<p id="result"></p>
 <script>
-    let numberAge = +prompt(" Nhập tuổi ");
-    if (numberAge === 15){
-        alert("Đủ điều kiện vào học lớp 10");
-    }else if (numberAge < 15){
-        alert("Không đủ điều kiện vào học lớp 10");
+    function oversee(){
+        let ageA = + document.getElementById('age').value;
+        // let numberAge = +prompt(" Nhập tuổi ");
+        if (ageA === 15){
+           document.getElementById('result').innerHTML= "Đủ điều kiện vào học lớp 10"
+        }else if (ageA < 15){
+            document.getElementById('result').innerHTML= "Không đủ điều kiện vào học lớp 10"
+        }
     }
+
 </script>
 </body>
 </html>

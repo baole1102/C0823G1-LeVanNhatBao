@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            height: 20px;
+            width: 200px;
+        }
+        .button {
+            margin-left: 116px;
+            width: 80px;
+            height: 30px;
+            background-color: orange;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h2>Giải phương trình bật một</h2>
+    <span>Nhập các tham số của phương trình ax + b = 0</span>
+</div>
+<table cellspacing="15">
+    <tr>
+        <td>
+            <span>a =</span>
+        </td>
+        <td>
+            <input id="numberA" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span>b =</span>
+        </td>
+        <td>
+            <input id="numberB" type="text">
+        </td>
+    </tr>
+</table>
+<div>
+    <button class="button" onclick="tranfer()" >Kết quả</button>
+</div>
+<p id="result"></p>
+<script>
+    function  tranfer(){
+        let numberA = document.getElementById('numberA').value;
+        let numberB = document.getElementById('numberB').value;
+        if(numberA == 0 && numberB == 0){
+            document.getElementById('result').innerHTML=" Phương trình có vô số nghiệm ";
+        } else if (numberA == 0 && numberB > 0 || numberB < 0){
+            document.getElementById('result').innerHTML=" Phương trình vô nghiệm ";
+        } else  {
+            let calculate = - numberB / numberA;
+            document.getElementById('result').innerHTML="Kết quả: Phương trình có nghiệm duy nhất x ="+calculate ;
+        }
+    }
+</script>
+</body>
+</html>

@@ -5,18 +5,51 @@
     <title>Title</title>
 </head>
 <body>
+<table>
+    <tr>
+        <th>
+            <p>Điểm kiểm tra</p>
+        </th>
+        <th>
+            <p>Điểm giữa kì</p>
+        </th>
+        <th>
+            <p>Điểm cuối kì</p>
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="check-score">
+        </td>
+        <td>
+            <input type="text" id="midterm-score">
+        </td>
+        <td>
+            <input type="text" id="final-score">
+        </td>
+        <td>
+            <button onclick="oversee()">Kiểm tra</button>
+        </td>
+    </tr>
+</table>
+<p id="result"></p>
 <script>
-    let score = prompt("Input Score");
-    if (score >=9){
-        document.write("Excellent");
-    }else if (score>=8){
-        document.write('Good');
-    }else if (score>=6){
-        document.write('Average')
-    }else {
-        document.write('Blow')
-    }
+    function oversee(){
+        let checkScore = +document.getElementById('check-score').value;
+        let midtermScore = +document.getElementById('midterm-score').value;
+        let finalScore = +document.getElementById('final-score').value;
+        let sum = (checkScore*0.2) +(midtermScore*0.3) + (finalScore*0.5)
+        if (sum >=9){
+            document.getElementById('result').innerHTML =("Excellent");
+        }else if (sum >=8){
+            document.getElementById('result').innerHTML =('Good');
+        }else if (sum >=6){
+            document.getElementById('result').innerHTML =('Average')
+        }else {
+            document.getElementById('result').innerHTML =('Blow')
+        }
 
+    }
 </script>
 </body>
 </html>

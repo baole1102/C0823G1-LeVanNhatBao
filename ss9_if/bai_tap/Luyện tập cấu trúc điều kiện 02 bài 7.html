@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            height: 20px;
+            width: 200px;
+        }
+        .button {
+            margin-left: 114px;
+            width: 80px;
+            height: 30px;
+            background-color: orange;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h2>Giải phương trình bật hai</h2>
+    <span>Nhập các tham số của phương trình ax<sup>2</sup> + bx + c = 0</span>
+</div>
+<table cellspacing="15">
+    <tr>
+        <td>
+            <span>a =</span>
+        </td>
+        <td>
+            <input id="numberA" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span>b =</span>
+        </td>
+        <td>
+            <input id="numberB" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span>c =</span>
+        </td>
+        <td>
+            <input id="numberC" type="text">
+        </td>
+    </tr>
+</table>
+<div>
+    <button class="button" onclick="tranfer()" >Kết quả</button>
+</div>
+<p id="result"></p>
+<script>
+    function  tranfer(){
+        let numberA = + document.getElementById('numberA').value;
+        let numberB = + document.getElementById('numberB').value;
+        let numberC = + document.getElementById('numberC').value;
+        let denta = + (numberB*numberB) - (4*numberA*numberC);
+        if(denta == 0 ){
+            let double =eval((-numberB)/(2*numberA));
+            document.getElementById('result').innerHTML=" Kết quả : Phương trình có nghiệm kép x1 = x2 = "+double;
+        } else if (denta >> 0){
+            let resultOne = eval((-numberB + Math.sqrt(denta))/(2*numberA));
+            console.log(resultOne)
+            let resultTwo = eval((-numberB - Math.sqrt(denta))/(2*numberA));
+            document.getElementById('result').innerHTML="Kết quả: Phương trình có 2 nghiệm x1=" +resultOne+ "và x2="+resultTwo ;
+        } else {
+            document.getElementById('result').innerHTML=" Phương trình vô nghiệm ";
+        }
+    }
+</script>
+</body>
+</html>

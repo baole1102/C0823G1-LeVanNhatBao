@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .container{
+            margin-left: 22px;
+        }
+        button {
+            width: 100px;
+            height: 25px;
+            background-color: orange;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-<table>
+<div class="container">
+    <h2>Chuyển đổi nhiệt độ</h2>
+    <span>Nhập số liệu:</span>
+</div>
+<table cellspacing="20">
     <tr>
-        <input placeholder="Độ C" type="text" id="number">
-    </tr>
-
-    <tr>
-        <button  onclick="convert()">Chuyển đổi</button>
+        <td>
+            <input placeholder="Độ C" type="text" id="number">
+        </td>
+        <td>
+            <button  onclick="convert()">Chuyển đổi</button>
+        </td>
     </tr>
 </table>
 <p id="result"></p>
@@ -19,8 +35,13 @@
     function convert() {
        let numberC = document.getElementById("number").value;
        let resultConvertF = numberC*(9/5)+32;
-       document.getElementById('result').innerHTML= 'Result:' + resultConvertF;
+       if ( numberC >= -273 ) {
+           document.getElementById('result').innerHTML= "Kết quả:" + resultConvertF + ""+"độ F"
+       }else {
+           document.getElementById('result').innerHTML= "Kết quả:Không tồn tại"
+       }
     }
+
 </script>
 </body>
 </html>

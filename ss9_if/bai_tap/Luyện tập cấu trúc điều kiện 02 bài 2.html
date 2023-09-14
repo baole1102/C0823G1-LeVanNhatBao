@@ -3,8 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .container{
+            margin-left: 9px;
+        }
+        button {
+            width: 100px;
+            height: 25px;
+            background-color: orange;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <h2>Chuyển đổi m sang ft</h2>
+</div>
     <table cellpadding="5">
         <tr>
             <th>Số liệu chuyển đổi m sang feet</th>
@@ -12,7 +26,7 @@
         </tr>
         <tr>
            <td>
-               <input id="number" style="width: 200px" type="text" placeholder="Nhập số liệu cần chuuyển đổi...">
+               <input id="number" style="width: 200px" type="text" placeholder="Nhập số liệu cần chuyển đổi...">
            </td>
             <td>
                 <button onclick="convert ()">Chuyển đổi</button>
@@ -24,9 +38,15 @@
 
     function convert() {
         let number = document.getElementById("number").value;
-        let convertNumber = number*3.2808;
-        document.getElementById("result").innerHTML = 'Result:'+ convertNumber;
-    }
+        if (number > 0){
+            let convertNumber = number*3.2808;
+            document.getElementById("result").innerHTML = 'Result:'+ convertNumber;
+        }else if (number == 0) {
+            document.getElementById("result").innerHTML = 'Result: 0';
+        }else {
+            document.getElementById("result").innerHTML = 'Giá trị không hợp lệ'
+        }
+        }
 </script>
 </body>
 </html>

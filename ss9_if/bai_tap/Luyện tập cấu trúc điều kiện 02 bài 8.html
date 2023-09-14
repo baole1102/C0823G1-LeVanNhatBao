@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            height: 20px;
+            width: 200px;
+        }
+        .button {
+            margin-left: 116px;
+            width: 80px;
+            height: 30px;
+            background-color: orange;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h2>Kiểm tra tuổi của người</h2>
+    <span>Nhập tuổi:</span>
+</div>
+<table cellspacing="15">
+    <tr>
+        <td>
+            <label for="numberA">a =</label>
+        </td>
+        <td>
+            <input id="numberA" type="text">
+        </td>
+    </tr>
+</table>
+<div>
+    <button class="button" onclick="tranfer()" >Kiểm tra</button>
+</div>
+<p id="result"></p>
+<script>
+    function  tranfer(){
+        let numberA = document.getElementById('numberA').value;
+        if(numberA > 0 && numberA < 120){
+            document.getElementById('result').innerHTML="Kết quả: Người ngày "+ numberA + "tuổi";
+        } else  {
+            document.getElementById('result').innerHTML= "Kết quả: Số này không phải là tuổi " ;
+        }
+    }
+</script>
+</body>
+</html>
