@@ -50,61 +50,60 @@
 <p id="result"></p>
 <script>
     function tranfer() {
-        let numberA = +document.getElementById('numberA').value;
-        let monthB = +document.getElementById('monthB').value;
-        let interestRateMonth = 0.00833333; //lãi suất 1 tháng ( 1 năm = 10% lãi )
+        let numberA = parseInt(document.getElementById('numberA').value);
+        let monthB = parseInt(document.getElementById('monthB').value);
+        const interestRateMonth = 0.1; //lãi suất 1 tháng ( 1 năm = 10% lãi )
         switch (monthB) {
             case 1:
-                let interestRateMonthOne = numberA * interestRateMonth * monthB;
+                let interestRateMonthOne = numberA * Math.pow((1 + interestRateMonth), monthB);
                 document.getElementById('result').innerHTML = interestRateMonthOne;
                 break;
             case 2:
-                let interestRateMonthTwo = numberA * interestRateMonth * monthB;
-                document.getElementById('result').value = interestRateMonthTwo;
+                let interestRateMonthTwo = numberA * Math.pow((1 + interestRateMonth), monthB);
+                document.getElementById('result').innerHTML = interestRateMonthTwo;
                 break;
             case 3:
-                let interestRateMonthThree = numberA * interestRateMonth * monthB;
+                let interestRateMonthThree = numberA * Math.pow((1 + interestRateMonth), monthB);
                 document.getElementById('result').innerHTML = interestRateMonthThree;
                 break;
             case 4:
-                let interestRateMonthFor = numberA * interestRateMonth * monthB;
-                document.getElementById('result').value = interestRateMonthFor;
+                let interestRateMonthFor = numberA * Math.pow((1 + interestRateMonth), monthB);
+                document.getElementById('result').innerHTML = interestRateMonthFor;
                 break;
             case 5:
-                let interestRateMonthFive = numberA * interestRateMonth * monthB;
+                let interestRateMonthFive = numberA * Math.pow((1 + interestRateMonth), monthB);
                 document.getElementById('result').innerHTML = interestRateMonthFive;
                 break;
             case 6:
-                let interestRateMonthSix = numberA * interestRateMonth * monthB;
-                document.getElementById('result').value = interestRateMonthSix;
+                let interestRateMonthSix = numberA * Math.pow((1 + interestRateMonth), monthB);
+                document.getElementById('result').innerHTML = interestRateMonthSix;
                 break;
             case 7:
-                let interestRateMonthSeven = numberA * interestRateMonth * monthB;
+                let interestRateMonthSeven = numberA * Math.pow((1 + interestRateMonth), monthB);
                 document.getElementById('result').innerHTML = interestRateMonthSeven;
                 break;
             case 8:
-                let interestRateMonthEight = numberA * interestRateMonth * monthB;
-                document.getElementById('result').value = interestRateMonthEight;
+                let interestRateMonthEight = numberA * Math.pow((1 + interestRateMonth), monthB);
+                document.getElementById('result').innerHTML = interestRateMonthEight;
                 break;
             case 9:
-                let interestRateMonthNine = numberA * interestRateMonth * monthB;
+                let interestRateMonthNine = numberA * Math.pow((1 + interestRateMonth), monthB);
                 document.getElementById('result').innerHTML = interestRateMonthNine;
                 break;
             case 10:
-                let interestRateMonthTen = numberA * interestRateMonth * monthB;
-                document.getElementById('result').value = interestRateMonthTen;
+                let interestRateMonthTen = numberA * Math.pow((1 + interestRateMonth), monthB);
+                document.getElementById('result').innerHTML = interestRateMonthTen;
                 break;
             case 11:
-                let interestRateMonthEleven = numberA * interestRateMonth * monthB;
+                let interestRateMonthEleven = numberA * Math.pow((1 + interestRateMonth), monthB);
                 document.getElementById('result').innerHTML = interestRateMonthEleven;
                 break;
             case 12:
-                let interestRateMonthTwel = numberA * interestRateMonth * monthB;
-                document.getElementById('result').value = interestRateMonthTwel;
+                let interestRateMonthTwel = numberA * Math.pow((1 + interestRateMonth), monthB);
+                document.getElementById('result').innerHTML = interestRateMonthTwel;
                 break;
         }
     }
-
 </script>
 </body>
 </html>
