@@ -8,6 +8,7 @@
             height: 20px;
             width: 200px;
         }
+
         .button {
             margin-left: 114px;
             width: 80px;
@@ -49,25 +50,25 @@
     </tr>
 </table>
 <div>
-    <button class="button" onclick="tranfer()" >Kết quả</button>
+    <button class="button" onclick="tranfer()">Kết quả</button>
 </div>
 <p id="result"></p>
 <script>
-    function  tranfer(){
-        let numberA = + document.getElementById('numberA').value;
-        let numberB = + document.getElementById('numberB').value;
-        let numberC = + document.getElementById('numberC').value;
-        let denta = + (numberB*numberB) - (4*numberA*numberC);
-        if(denta == 0 ){
-            let double =eval((-numberB)/(2*numberA));
-            document.getElementById('result').innerHTML=" Kết quả : Phương trình có nghiệm kép x1 = x2 = "+double;
-        } else if (denta >> 0){
-            let resultOne = eval((-numberB + Math.sqrt(denta))/(2*numberA));
+    function tranfer() {
+        let numberA = +document.getElementById('numberA').value;
+        let numberB = +document.getElementById('numberB').value;
+        let numberC = +document.getElementById('numberC').value;
+        let denta = +(numberB * numberB) - (4 * numberA * numberC);
+        if (denta == 0) {
+            let double = eval((-numberB) / (2 * numberA));
+            document.getElementById('result').innerHTML = " Kết quả : Phương trình có nghiệm kép x1 = x2 = " + double;
+        } else if (denta >> 0) {
+            let resultOne = eval((-numberB + Math.sqrt(denta)) / (2 * numberA));
             console.log(resultOne)
-            let resultTwo = eval((-numberB - Math.sqrt(denta))/(2*numberA));
-            document.getElementById('result').innerHTML="Kết quả: Phương trình có 2 nghiệm x1=" +resultOne+ "và x2="+resultTwo ;
+            let resultTwo = eval((-numberB - Math.sqrt(denta)) / (2 * numberA));
+            document.getElementById('result').innerHTML = "Kết quả: Phương trình có 2 nghiệm x1=" + resultOne + "và x2=" + resultTwo;
         } else {
-            document.getElementById('result').innerHTML=" Phương trình vô nghiệm ";
+            document.getElementById('result').innerHTML = " Phương trình vô nghiệm ";
         }
     }
 </script>

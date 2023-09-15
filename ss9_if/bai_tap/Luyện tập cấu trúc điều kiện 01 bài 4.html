@@ -40,14 +40,11 @@
         let numberThree = +document.getElementById('number-three').value;
         if (numberOne > numberTwo && numberOne > numberThree) {
             document.getElementById('result').innerHTML = ("Number 1 lớn nhất");
-        } else if (numberOne < numberTwo && numberOne > numberThree) {
+        } else if (numberOne < numberTwo && numberTwo > numberThree) {
             document.getElementById('result').innerHTML = ("Number 2 lớn nhất");
-        } else if (numberOne < numberTwo && numberTwo < numberThree) {
+        } else
             document.getElementById('result').innerHTML = ("Number 3 lớn nhất");
-        } else if (numberThree > numberOne && numberThree < numberTwo) {
-            document.getElementById('result').innerHTML = ("Number 2 lớn nhất");
         }
-    }
 
 </script>
 </body>

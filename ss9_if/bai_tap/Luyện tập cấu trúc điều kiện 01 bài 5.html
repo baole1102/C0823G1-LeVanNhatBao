@@ -34,19 +34,19 @@
 </table>
 <p id="result"></p>
 <script>
-    function oversee(){
+    function oversee() {
         let checkScore = +document.getElementById('check-score').value;
         let midtermScore = +document.getElementById('midterm-score').value;
         let finalScore = +document.getElementById('final-score').value;
-        let sum = (checkScore*0.2) +(midtermScore*0.3) + (finalScore*0.5)
-        if (sum >=9){
-            document.getElementById('result').innerHTML =("Excellent");
-        }else if (sum >=8){
-            document.getElementById('result').innerHTML =('Good');
-        }else if (sum >=6){
-            document.getElementById('result').innerHTML =('Average')
-        }else {
-            document.getElementById('result').innerHTML =('Blow')
+        let sum = (checkScore * 0.2) + (midtermScore * 0.3) + (finalScore * 0.5)
+        if (sum >= 9) {
+            document.getElementById('result').innerHTML = ("Excellent");
+        } else if (sum >= 8) {
+            document.getElementById('result').innerHTML = ('Good');
+        } else if (sum >= 6) {
+            document.getElementById('result').innerHTML = ('Average')
+        } else {
+            document.getElementById('result').innerHTML = ('Blow')
         }
 
     }

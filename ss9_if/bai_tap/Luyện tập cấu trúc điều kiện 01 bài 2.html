@@ -18,13 +18,13 @@
 </table>
 <p id="result"></p>
 <script>
-    function oversee(){
-        let ageA = + document.getElementById('age').value;
+    function oversee() {
+        let ageA = +document.getElementById('age').value;
         // let numberAge = +prompt(" Nhập tuổi ");
-        if (ageA === 15){
-           document.getElementById('result').innerHTML= "Đủ điều kiện vào học lớp 10"
-        }else if (ageA < 15){
-            document.getElementById('result').innerHTML= "Không đủ điều kiện vào học lớp 10"
+        if (ageA >= 15) {
+            document.getElementById('result').innerHTML = "Đủ điều kiện vào học lớp 10"
+        } else if (ageA < 15) {
+            document.getElementById('result').innerHTML = "Không đủ điều kiện vào học lớp 10"
         }
     }
 

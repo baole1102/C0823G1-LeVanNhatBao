@@ -45,16 +45,16 @@
     function tranfer() {
         let numberA = +document.getElementById('numberA').value;
         if (numberA > 0 && numberA <= 100) {
-            var priceEletric = numberA * priceLevelOne ;
-            var sumPriceEletric = priceEletric*0.1+priceEletric;
+            var priceEletric = numberA * priceLevelOne;
+            var sumPriceEletric = priceEletric * 0.1 + priceEletric;
             document.getElementById('result').innerHTML = "Kết quả: tiền điện tháng này là: " + sumPriceEletric;
         } else if (numberA > 100 && numberA <= 300) {
             var priceEletric = numberA * priceLevelTwo;
-            var sumPriceEletric = priceEletric*0.1+priceEletric;
-            document.getElementById('result').innerHTML = "Kết quả: tiền điện tháng này là: " +sumPriceEletric;
+            var sumPriceEletric = priceEletric * 0.1 + priceEletric;
+            document.getElementById('result').innerHTML = "Kết quả: tiền điện tháng này là: " + sumPriceEletric;
         } else if (numberA > 300) {
             var priceEletric = numberA * priceLevelThree;
-            var sumPriceEletric = priceEletric*0.1+priceEletric;
+            var sumPriceEletric = priceEletric * 0.1 + priceEletric;
             document.getElementById('result').innerHTML = "Kết quả: tiền điện tháng này là: " + sumPriceEletric;
         } else {
             document.getElementById('result').innerHTML = "Kết quả: Số liệu không hợp lệ";
