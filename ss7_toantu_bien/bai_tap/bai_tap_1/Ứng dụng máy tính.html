@@ -19,6 +19,12 @@
         <td>
             <button onclick="minusNumber ()">Trừ</button>
         </td>
+        <td>
+            <button onclick="coreNumber ()">Nhân</button>
+        </td>
+        <td>
+            <button onclick="divideNumber ()">Chia</button>
+        </td>
     </tr>
     </table>
 <h3> Result:</h3>
@@ -37,6 +43,18 @@
         let number2 = document.getElementById('number_2').value;
         let resultMinus = number1 - number2 ;
         document.getElementById('result').innerHTML = resultMinus;
+    }
+    function coreNumber() {
+        let number1 = document.getElementById("number_1").value;
+        let number2 = document.getElementById('number_2').value;
+        let resultCore = number1*number2 ;
+        document.getElementById('result').innerHTML = resultCore;
+    }
+    function divideNumber() {
+        let number1 = document.getElementById("number_1").value;
+        let number2 = document.getElementById('number_2').value;
+        let resultDevide = number1/number2 ;
+        document.getElementById('result').innerHTML = resultDevide;
     }
 
 </script>
