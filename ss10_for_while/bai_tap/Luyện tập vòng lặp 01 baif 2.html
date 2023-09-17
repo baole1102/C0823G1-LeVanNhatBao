@@ -6,8 +6,20 @@
 </head>
 <body>
 <script>
-  let  temputer = prompt('Nhập nhiệt độ');
-  let
+  number = prompt('Nhập nhiệt độ');
+  while (number > 100 || number < 20) {
+    if (number < 20) {
+      alert("Cần tăng nhiệt độ");
+      break;
+      // temputer = prompt('Nhập nhiệt độ')
+    } else if (number > 100) {
+      alert("Cần giảm nhiệt độ");
+      // temputer = prompt('Nhập nhiệt độ')
+      break;
+    }
+  }
+
+
 </script>
 </body>
 </html>

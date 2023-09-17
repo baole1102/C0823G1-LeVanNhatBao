@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .container {
+      margin-left: 16px;
+    }
+
+    input {
+      height: 20px;
+      width: 200px;
+    }
+
+    .button {
+      margin-left: 114px;
+      width: 80px;
+      height: 30px;
+      background-color: orange;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>Tính lãi ngân hàng</h2>
+</div>
+<table>
+  <tr>
+    <td>
+      <label for="numberA">Money =</label>
+    </td>
+    <td>
+      <input id="numberA" type="text">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="monthB">Month =</label>
+    </td>
+    <td>
+      <input id="monthB" type="text">
+    </td>
+  </tr>
+</table>
+<div>
+  <button class="button" onclick="tranfer()">Kết quả</button>
+</div>
+<p id="result"></p>
+<script>
+  function tranfer() {
+    let numberA = parseInt(document.getElementById('numberA').value);
+    let monthB = parseInt(document.getElementById('monthB').value);
+    const interestRateMonth = 0.1; //lãi suất 1 tháng ( 1 năm = 10% lãi )'
+    for (i = 1; i <=12; i++){
+      if (i == monthB){
+        let interestRateMonthOne = numberA * Math.pow((1 + interestRateMonth), monthB);
+        document.getElementById('result').innerHTML = interestRateMonthOne;
+        break;
+      }else {
+        continue;
+      }
+    }
+    }
+</script>
+</body>
+</html>

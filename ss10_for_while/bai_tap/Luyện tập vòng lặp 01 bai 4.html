@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let l = 0
+  let i = 1;
+  let j = 1;
+  let divideFive = "";
+  let fibonaci = "";
+  for (a = 0; a < 20; a++) {
+    if (a == 0) {
+      fibonaci += j + " ";
+    } else {
+      result = l + i;
+      l = i;
+      i = result;
+      fibonaci += result + " ";
+      if (result % 5 == 0) {
+        divideFive = result
+        break;
+      }
+    }
+  }
+  document.write("Số chia hết cho 5 là :" + divideFive)
+
+</script>
+</body>
+</html>

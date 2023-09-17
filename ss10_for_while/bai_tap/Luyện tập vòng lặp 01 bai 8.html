@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="button()">Bắt đầu</button>
+<script>
+  function button() {
+    let guess = +prompt(" Số bé muốn đoán trong khoảng lớn nhất là bao nhiêu vậy? ")
+    var randomNumber = Math.floor(Math.random() * guess);
+    for (i = 1; i <= 3; i++) {
+      let number = +prompt("Nhập số bé đoán");
+      if (number === randomNumber) {
+        alert("Bé đoán trúng rồi đấy ! Giỏi lắm .");
+        break;
+      } else if (number > randomNumber) {
+        alert(" Số bé đoán lớn hơn sức tưởng tượng của tôi");
+        // continue;
+      } else {
+        alert(" Số bé đoán bé hơn sức tưởng tượng của tôi");
+        // continue;
+      }
+    }
+    document.write("Bạn đã hết lượt ( Kém quá )");
+
+  }
+
+
+</script>
+</body>
+</html>
