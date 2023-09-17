@@ -8,21 +8,23 @@
 <body>
 <script>
   infor = prompt("Nhập số");
-  let sum =0;
-  let b = + infor ;
+  let sum = 0;
+  let b = +infor;
   let i;
-  for( ;b>0; ){
-        i = b-1;
-       if (b==0 || b == 1){
+  for (; b > 0;) {
+    i = b - 1;
+    if (b == 0 || b == 1) {
       b = 1;
-      luyThua = b*(b-1);
+      luyThua = b * (b - 1);
       console.log(luyThua);
+      document.write(luyThua)
       break;
     }
-    cal = b*i;
-    sum +=cal
+    cal = b * i;
+    sum += cal
     b--
-    console.log(sum )
+    console.log(sum)
+    document.write(sum)
     break;
   }
 </script>
