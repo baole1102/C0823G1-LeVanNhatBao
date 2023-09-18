@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soNguyen = [5, 11, 20, 4, 3, 18, 10, 1, 50, 30];
+    let result = '';
+    for (i = 0; i < soNguyen.length; i++) {
+        if (soNguyen[i] >= 10) {
+            result += soNguyen[i] + " ";
+        } else {
+            continue;
+        }
+    }
+    document.write("Số nguyên lớn hơn 10 là:" + result )
+</script>
+</body>
+</html>

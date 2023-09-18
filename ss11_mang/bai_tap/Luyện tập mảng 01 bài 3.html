@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soNguyen = [5, 11, 20, 4, 3, 18, 10, 1, 50, 30];
+    let numberMax = soNguyen [0]
+    let position ="";
+    let sum = 0;
+    let average;
+    for (i = 1; i < soNguyen.length; i++) {
+        if (soNguyen[i] > numberMax) {
+            numberMax = soNguyen [i]
+            position = i
+            sum +=numberMax
+        }else {
+            sum += soNguyen[i]
+        }
+    }
+    average = (sum + soNguyen[0])/soNguyen.length ;
+    document.write("Average: "+average +"<br>")
+    document.write("Số nguyên lớn hơn 10 là số:" + " "+numberMax +" " + "Nằm ở vị trí:"+" "+position )
+</script>
+</body>
+</html>
