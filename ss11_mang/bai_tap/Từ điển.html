@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            width: 500px;
+            margin: 300px 0 0 400px;
+        }
+
+        button {
+            height: 30px;
+            width: 70px;
+            margin-left: 30px;
+            border-radius: 4px;
+            background-color: rgba(255, 99, 71, 0.2);
+        }
+
+        .span {
+            border: 1px solid black;
+            width: 270px;
+            height: 35px;
+            margin-top: 40px;
+            border-radius: 5px;
+            text-align: center;
+            top: 100px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .span--inner {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <label style="font-size: 20px; color: red; font-weight: 600" for="convert">Nhập từ muốn dịch:</label>
+            </td>
+            <td>
+                <input style="height: 22px; border-radius: 4px; border: 1px solid #7fff90" placeholder="Ex:Dog,Cat,..."
+                       type="text" id="convert">
+            </td>
+            <td>
+                <button type="button" onclick="tranferSomething()">Dịch</button>
+            </td>
+        </tr>
+    </table>
+    <div class="span">
+        <span class="span--inner" id="result"></span>
+    </div>
+</div>
+<script>
+    let result;
+
+    function tranferSomething() {
+        let convert = document.getElementById('convert').value;
+        let vietNam = ["Chó", "Mèo", "Phương Pháp", "Yêu", "Khóc", "Nhớ", "Em"];
+        let engLish = ["Dog", "Cat", "Method", "Love", "Cry", "Miss", "You"];
+        for (i = 0; i < vietNam.length; i++) {
+            if (convert == engLish[i]) {
+                result = vietNam[i];
+
+                document.getElementById('result').innerHTML = "Dịch sang tiếng việt cho nè :" + " " + result;
+            }
+        }
+    }
+</script>
+</body>
+</html>
