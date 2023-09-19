@@ -24,33 +24,34 @@
     <table>
         <tr>
             <td>
-                <label for="click--me">Nhập 10 số nguyên vào đây:</label>
+                <label for="click--me">Nhập 10 số nguyên ( Mảng a):</label>
             </td>
             <td>
                 <input type="text" id="click--me">
             </td>
         </tr>
+        <tr>
+            <td>
+                <label for="click--meagain">Nhập 10 số nguyên ( Mảng b):</label>
+            </td>
+            <td>
+                <input type="text" id="click--meagain">
+            </td>
+        </tr>
     </table>
 </div>
 <div>
-    <button type="button" onclick="examine ()">Xắp xếp</button>
+    <button type="button" onclick="examine ()">Gộp</button>
 </div>
 <p id="result"></p>
 <script>
     function examine(){
         let clickMe =document.getElementById('click--me').value;
+        let clickMeAgaine =document.getElementById('click--meagain').value;
         let array = clickMe.split('');
-
-        array.sort();
-        document.getElementById('result').innerHTML = "Xắp xết" + array;
-
-        // for (i = 0; i< array.length; i++){
-        //     if (arrayAgaine == array[i] ){
-        //         array.splice(i,1)
-        //         console.log(array)
-        //     }
-        // }
-        // document.getElementById("result").innerHTML= "Số chuỗi mới :" +" " + array
+        let arrayAgaine = clickMeAgaine.split('');
+        let c = array.concat(arrayAgaine);
+        document.getElementById("result").innerHTML= "Số chuỗi mới :" +"c = " +" "+ "["+c+"]";
     }
 </script>
 </body>
