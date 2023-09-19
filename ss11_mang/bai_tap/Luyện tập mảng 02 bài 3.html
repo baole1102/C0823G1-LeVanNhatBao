@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {
+            height: 25px;
+            width: 80px;
+            border-radius: 4px;
+            background-color: #7fff90;
+            margin: 30px 0 0 100px;
+            cursor: pointer;
+        }
+
+        h2 {
+            color: red;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<h2>Chương Trình Đếm Kí Tự Trong Mảng</h2>
+<div>
+    <table>
+        <tr>
+            <td>
+                <label for="click--me">Nhập số cột:</label>
+            </td>
+            <td>
+                <input type="text" id="click--me">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="click--meagain">Nhập số dòng:</label>
+            </td>
+            <td>
+                <input type="text" id="click--meagain">
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <button type="button" onclick="examine ()">Kiểm tra</button>
+</div>
+<p id="result"></p>
+<script>
+    function examine() {
+        let col = +document.getElementById('click--me').value; // i: dong
+        let arrayCol = new Array(col)
+        let row = +document.getElementById('click--meagain').value; // j : cot
+        let arrayRow = new Array(row)
+        for (let i = 0; i < arrayCol.length; i++) {
+            arrayCol[i] = arrayRow
+        }
+        for (let i = 0; i < arrayCol.length; i++) {
+            for (let j = 0; j < arrayCol[i].length; j++) {
+                arrayCol[i][j] = "abc";
+            }
+            document.getElementById('result').innerHTML= arrayCol + "<br>";
+        }
+        console.log(arrayCol)
+        document.getElementById('result').innerHTML= arrayCol;
+    }
+</script>
+</body>
+</html>

@@ -9,13 +9,13 @@
             width: 80px;
             border-radius: 4px;
             background-color: #7fff90;
-            margin: 30px 0 0 220px;
+            margin: 30px 0 0 140px;
             cursor: pointer;
         }
 
         h2 {
             color: red;
-            margin-left: 100px;
+            margin-left: 30px;
         }
     </style>
 </head>
@@ -25,7 +25,7 @@
     <table>
         <tr>
             <td>
-                <label for="click--me">Nhập 10 số nguyên ( Mảng a):</label>
+                <label for="click--me">Chuỗi đầu tiên:</label>
             </td>
             <td>
                 <input type="text" id="click--me">
@@ -33,7 +33,7 @@
         </tr>
         <tr>
             <td>
-                <label for="click--meagain">Nhập 10 số nguyên ( Mảng b):</label>
+                <label for="click--meagain">Chuỗi thứ hai:</label>
             </td>
             <td>
                 <input type="text" id="click--meagain">
@@ -42,7 +42,7 @@
     </table>
 </div>
 <div>
-    <button type="button" onclick="examine ()">Gộp</button>
+    <button type="button" onclick="examine ()">Kiểm tra</button>
 </div>
 <p id="result"></p>
 <script>
@@ -51,8 +51,17 @@
         let clickMeAgaine = document.getElementById('click--meagain').value;
         let array = clickMe.split('');
         let arrayAgaine = clickMeAgaine.split('');
-        let c = array.concat(arrayAgaine);
-        document.getElementById("result").innerHTML = "Số chuỗi mới :" + "c = " + " " + "[" + c + "]";
+        if (array.length === arrayAgaine.length) {
+            for (i = 0; i < array.length; i++) {
+                if (array[i] === arrayAgaine[i]) {
+                    document.getElementById("result").innerHTML = "Số chuỗi giông nhau";
+                } else {
+                    document.getElementById("result").innerHTML = "Số chuỗi khác nhau"
+                }
+            }
+        } else {
+            document.getElementById("result").innerHTML = "Số chuỗi khác nhau"
+        }
     }
 </script>
 </body>
