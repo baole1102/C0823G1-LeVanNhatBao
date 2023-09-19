@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <td>
+                <label for="pick--me">Nhập dẫy số vào đây:</label>
+            </td>
+            <td>
+                <input type="text" id="pick--me">
+            </td>
+            <td>
+                <button type="button" onclick="arrange()">Sắp xếp</button>
+            </td>
+        </tr>
+    </table>
+    <p id="result"></p>
+</div>
+<script>
+    function arrange() {
+        let result;
+        let pickMe = document.getElementById("pick--me").value;
+        let numberArray = pickMe.split('');
+        console.log(numberArray)
+        result = numberArray.reverse('');
+        document.getElementById("result").innerHTML = "Các số cần sắp xếp " + " " + pickMe + "<br>";
+        document.getElementById("result").innerHTML = "Sắp xếp:" + " " + result;
+    }
+</script>
+
+
+</body>
+</html>
