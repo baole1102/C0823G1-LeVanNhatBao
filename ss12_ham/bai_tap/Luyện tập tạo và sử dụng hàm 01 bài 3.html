@@ -5,8 +5,21 @@
     <title>Title</title>
 </head>
 <body>
+<button type="button" onclick="twoNumbers()">Bấm vào đây</button>
 <script>
-    
+    function twoNumbers() {
+        let numberOne = +prompt("Nhập số thứ nhất")
+        let numberTwo = +prompt("Nhập số thứ hai")
+        // let numberOne = 5;
+        // let numberTwo = 6;
+        if (numberOne <= numberTwo) {
+            let result = numberTwo + numberOne;
+            document.write("Result:" + " " + result)
+        } else {
+            alert("Số thứ 2 lớn hơn số thứ nhất");
+        }
+    }
+
 </script>
 </body>
 </html>
