@@ -1,66 +1,19 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Title</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<p id="input"></p>-->
-<!--<script>-->
-<!--    let convert;-->
-<!--    let prior;-->
-<!--    let letter = ['b','a','o','d','e','p','t','r','a','i'];-->
-<!--    prior = letter.toString();-->
-<!--    convert = letter.reverse();-->
-<!--    document.getElementById('input').innerHTML = "Từ muốn sắp xếp" + prior;-->
-<!--    document.getElementById('input').innerHTML = "Từ đã sắp xếp" + convert;-->
-<!--</script>-->
-<!--</body>-->
-<!--</html>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-        button {
-            height: 25px;
-            width: 80px;
-            border-radius: 4px;
-            background-color: #7fff90;
-            margin: 30px 0 0 220px;
-            cursor: pointer;
-        }
-        h2 {
-            color: red;
-            margin-left: 100px;
-        }
-    </style>
 </head>
 <body>
-<h2>Chương Trình Sắp Xếp</h2>
-<div>
-    <table>
-        <tr>
-            <td>
-                <label for="click--me">Nhập chữ muốn sắp xếp:</label>
-            </td>
-            <td>
-                <input placeholder="VD: baodeptrai" type="text" id="click--me">
-            </td>
-        </tr>
-    </table>
-</div>
-<div>
-    <button type="button" onclick="examine ()">Xắp xếp</button>
-</div>
-<p id="result"></p>
 <script>
-    function examine(){
-        let clickMe =document.getElementById('click--me').value;
-        let array = clickMe.split('');
-        let arrange = array.reverse();
-        document.getElementById('result').innerHTML = "Sắp xếp:" + ' ' + arrange +' ';
+// Thuật toán
+        let array = ["bao","dep","trai","lam"];
+        let b = array.toString();
+        let newArray =[];
+        for (i = b.length-1 ; i >= 0; i--){
+            newArray += b[i]
+        }
+        document.write(newArray)
 
         // for (i = 0; i< array.length; i++){
         //     if (arrayAgaine == array[i] ){
@@ -69,7 +22,6 @@
         //     }
         // }
         // document.getElementById("result").innerHTML= "Số chuỗi mới :" +" " + array
-    }
 </script>
 </body>
 </html>
