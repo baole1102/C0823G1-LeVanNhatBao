@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result--meter"></p>
+<p id="result--foot"></p>
+<script>
+    let numberFoot = +prompt("Nhập foot");
+
+    function footToMeter(foot) {
+        convertMeter = 0.305 * foot
+        document.getElementById('result--meter').innerText = foot + "foot" + "=" + " " + convertMeter + " " + "metter"
+    }
+
+    footToMeter(numberFoot);
+
+    let numberMeter = +prompt("Nhập meter");
+
+    function meterToFoot(meter) {
+        convertFoot = 3.279 * meter
+        document.getElementById('result--foot').innerText = meter + "metter" + " " + "=" + " " + convertFoot + " " + "foot"
+    }
+
+    meterToFoot(numberMeter);
+</script>
+</body>
+</html>

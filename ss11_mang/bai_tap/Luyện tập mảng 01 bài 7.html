@@ -12,6 +12,7 @@
             margin: 30px 0 0 220px;
             cursor: pointer;
         }
+
         h2 {
             color: red;
             margin-left: 100px;
@@ -45,18 +46,18 @@
 </div>
 <p id="result"></p>
 <script>
-    function examine(){
-        let clickMe =document.getElementById('click--me').value;
-        let clickMeAgaine =document.getElementById('click--meagain').value;
+    function examine() {
+        let clickMe = document.getElementById('click--me').value;
+        let clickMeAgaine = document.getElementById('click--meagain').value;
         let array = clickMe.split('');
         let arrayAgaine = clickMeAgaine.split('');
-        for (i = 0; i< array.length; i++){
-            if (arrayAgaine == array[i] ){
-             array.splice(i,1)
-               console.log(array)
+        for (i = 0; i < array.length; i++) {
+            if (arrayAgaine == array[i]) {
+                array.splice(i, 1)
+                console.log(array)
             }
-            }
-        document.getElementById("result").innerHTML= "Số chuỗi mới :" +" " + array
+        }
+        document.getElementById("result").innerHTML = "Số chuỗi mới :" + " " + array
     }
 </script>
 </body>

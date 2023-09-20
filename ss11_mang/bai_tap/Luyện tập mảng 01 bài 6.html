@@ -11,6 +11,7 @@
             background-color: #7fff90;
             margin: 30px 0 0 220px;
         }
+
         h2 {
             color: red;
             margin-left: 100px;
@@ -44,15 +45,15 @@
 </div>
 <p id="result"></p>
 <script>
-    function examine(){
-        let clickMe =document.getElementById('click--me').value;
-        let clickMeAgaine =document.getElementById('click--meagain').value;
+    function examine() {
+        let clickMe = document.getElementById('click--me').value;
+        let clickMeAgaine = document.getElementById('click--meagain').value;
         let array = clickMe.split('');
         let arrayAgaine = clickMeAgaine.split('');
-        for (i = 0; i< array.length; i++){
-            if (arrayAgaine == array[i] ){
+        for (i = 0; i < array.length; i++) {
+            if (arrayAgaine == array[i]) {
                 document.getElementById("result").innerHTML = "Result: V is in the array";
-            }else {
+            } else {
                 document.getElementById("result").innerHTML = "Result: V is not in the array";
             }
         }
