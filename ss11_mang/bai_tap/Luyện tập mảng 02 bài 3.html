@@ -25,7 +25,7 @@
     <table>
         <tr>
             <td>
-                <label for="click--me">Nhập số cột:</label>
+                <label for="click--me">Nhập số dòng:</label>
             </td>
             <td>
                 <input type="text" id="click--me">
@@ -33,7 +33,7 @@
         </tr>
         <tr>
             <td>
-                <label for="click--meagain">Nhập số dòng:</label>
+                <label for="click--meagain">Nhập số cột:</label>
             </td>
             <td>
                 <input type="text" id="click--meagain">
@@ -46,6 +46,7 @@
 </div>
 <p id="result"></p>
 <script>
+    let result ="";
     function examine() {
         let col = +document.getElementById('click--me').value; // i: dong
         let arrayCol = new Array(col)
@@ -56,13 +57,12 @@
         }
         for (let i = 0; i < arrayCol.length; i++) {
             for (let j = 0; j < arrayCol[i].length; j++) {
-                arrayCol[i][j] = "abc";
+                arrayCol[i][j] = "a2c";
             }
-            document.getElementById('result').innerHTML= arrayCol + "<br>";
-        }
-        console.log(arrayCol)
-        document.getElementById('result').innerHTML= arrayCol;
+            document.getElementById('result').innerHTML= result += arrayCol[i] + "<br>" ;
+       }
     }
+
 </script>
 </body>
 </html>
