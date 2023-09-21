@@ -21,47 +21,16 @@
 </head>
 <body>
 <h2>Chương Trình Đếm Kí Tự Trong Mảng</h2>
-<div>
-    <table>
-        <tr>
-            <td>
-                <label for="click--me">Nhập số dòng:</label>
-            </td>
-            <td>
-                <input type="text" id="click--me">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="click--meagain">Nhập số cột:</label>
-            </td>
-            <td>
-                <input type="text" id="click--meagain">
-            </td>
-        </tr>
-    </table>
-</div>
-<div>
-    <button type="button" onclick="examine ()">Kiểm tra</button>
-</div>
 <p id="result"></p>
 <script>
-    let result ="";
-    function examine() {
-        let col = +document.getElementById('click--me').value; // i: dong
-        let arrayCol = new Array(col)
-        let row = +document.getElementById('click--meagain').value; // j : cot
-        let arrayRow = new Array(row)
-        for (let i = 0; i < arrayCol.length; i++) {
-            arrayCol[i] = arrayRow
+    let arr = ['b', 'a', 'o', 'd', 'e', 'p','t', 'r', 'a', 'i', '1', '2'];
+    let count = 0;
+    for (let index = 0; index < arr.length; index++) {
+        if (!isNaN(arr[index])) {
+            count++;
         }
-        for (let i = 0; i < arrayCol.length; i++) {
-            for (let j = 0; j < arrayCol[i].length; j++) {
-                arrayCol[i][j] = "a2c";
-            }
-            document.getElementById('result').innerHTML= result += arrayCol[i] + "<br>" ;
-       }
     }
+    document.getElementById("result").innerHTML = "Result:"+" "+ count;
 
 </script>
 </body>

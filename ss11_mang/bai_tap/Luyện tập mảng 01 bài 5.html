@@ -1,24 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
 <script>
+    let dictionary = "hue dep qua";
+    let array = dictionary.split("");
+    console.log(array)
     let count = 0;
-    let arrayNumber = ""
-    let array = [12, -1, -5, 4, 3, 2, 1, -10, -11, -12]
-    for (i = 0; i < array.length; i++) {
-        if (array[i] >= 0) {
-            continue;
-        } else {
-            arrayNumber += array[i]
-            count++
+    let checkArray = ["u", "e", 'o', 'a', 'i'];
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0 ; j < array.length; j++){
+            if (array[i]=== checkArray[j] ){
+                count++
+            }
         }
     }
-    document.write("Các số nguyên âm trong chuổi là:" + " " + arrayNumber + "<br>")
-    document.write(" Có" + " " + count + ' ' + "số nguyên âm trong chuổi")
+    document.write(count);
+
 </script>
 </body>
 </html>
