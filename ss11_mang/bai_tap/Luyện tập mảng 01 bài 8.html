@@ -37,14 +37,10 @@
     <button type="button" onclick="examine ()">Xắp xếp</button>
     <script>
         function examine() {
-
             // Kiểm tra
             let clickMe = document.getElementById('click--me').value;
-            let newArray = clickMe.split("")
-            // array.sort();
-            // document.getElementById('result').innerHTML = "Sắp xếp" + array;
-            //
-            // // Thuật toán
+            let newArray = clickMe.split(" ")
+
             for (let i = 0; i < newArray.length; i++) {
                 for (let j = 0; j < newArray.length; j++) {
                     if (newArray[j] < newArray [j + 1]) {
@@ -55,15 +51,7 @@
                 }
             }
             document.getElementById('result').innerHTML = "Sắp xếp:" + " " + newArray;
-            // }
-            // console.log(newArray)
-            // for (i = 0; i< array.length; i++){
-            //     if (arrayAgaine == array[i] ){
-            //         array.splice(i,1)
-            //         console.log(array)
-            //     }
-            // }
-            // document.getElementById("result").innerHTML= "Số chuỗi mới :" +" " + array
+
         }
     </script>
 </div>

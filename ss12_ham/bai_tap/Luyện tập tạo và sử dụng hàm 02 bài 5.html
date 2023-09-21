@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let ramdomOne = +prompt(" Nhập số nguyên thứ nhất");
+    let ramdomTwo = +prompt(" Nhập số nguyên thứ hai");
+    let ramdomThree = +prompt(" Nhập số nguyên thứ ba");
+
+    function lauchMaxNumber(a, b, c) {
+        if (a < b && a < c) {
+            alert("Số nhỏ nhất là số:" + " " + a)
+        } else if (b < a && b < c) {
+            alert("Số nhỏ nhất là số:" + " " + b)
+        } else if (c < a && c < b) {
+            alert("Số nhỏ nhất là số:" + " " + c)
+        }
+    }
+        lauchMaxNumber(ramdomOne, ramdomTwo, ramdomThree)
+
+</script>
+</body>
+</html>
