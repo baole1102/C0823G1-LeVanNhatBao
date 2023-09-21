@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let words =  prompt(" Nhập ký tự vào đây");
+    let newArr= words.split("")
+
+    function checkNumberInString (a){
+        for (i = 0; i <a.length ; i++){
+            if (!isNaN(a[i])){
+                alert("True")
+                break;
+            }else {
+                alert("False")
+                break;
+            }
+        }
+    }
+    checkNumberInString(newArr)
+</script>
+</body>
+</html>
