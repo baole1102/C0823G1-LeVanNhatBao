@@ -11,12 +11,12 @@
 <script>
     let arr = [12, 0, 3, 4, 5, 6, 9];
     function number(a) {
-        for (i = 0; i < Math.pow(a.length/2); i++) {
-            let convert = a.length - 1 - i
-            a.length - 1 - i = a[i]
+        for (i = 0; i < Math.floor(a.length/2); i++) {
+            let convert = a[a.length - 1 - i]
+            a[a.length - 1 - i] = a[i]
             a[i] = convert;
         }
-        console.log(a)
+        alert(a)
     }
         number(arr);
 
