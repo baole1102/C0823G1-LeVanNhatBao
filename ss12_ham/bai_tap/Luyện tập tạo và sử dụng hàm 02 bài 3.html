@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = + prompt("Số muốn tính giai thừa");
+    function calculate (a){
+        if (a === 2)
+            return 2;
+       return  a*calculate(a-1);
+    }
+    let newValue = calculate(number);
+    alert(newValue)
+</script>
+</body>
+</html>
