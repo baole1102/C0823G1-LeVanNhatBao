@@ -8,44 +8,44 @@
 <h3></h3>
 <script>
     // Bài 1 : Sắp xếp
-    // let myColor = ["Red", "Green", "White", "Black", "Yellow"];
-    // document.write(myColor + "<br>");
-    // document.write(myColor.join() + "&nbsp");
+    let myColor = ["Red", "Green", "White", "Black", "Yellow"];
+    document.write(myColor + "<br>");
+    document.write(myColor.join() + "&nbsp");
 
 
     // Bài 2
 
-    // let numbers = prompt("Nhập số vào đây");
-    // let mang = numbers.toString();
-    // const result = [mang[0]];
-    //
-    // for (let x = 1; x < mang.length; x++) {
-    //     if ((mang[x - 1] % 2 === 0) && (mang[x] % 2 === 0)) {
-    //         result.push('-', mang[x]);
-    //         console.log(mang[x - 1])
-    //         console.log(mang[x])
-    //     } else {
-    //         result.push(mang[x]);
-    //     }
-    // }
-    // console.log(result.join(''));
-    // Bài3
-    //
-    // let string = "bABY mUỐN nÓi lÀ bABY kHÔNG mUỐN yÊU 1 aI"
-    // document.write("Examble:" + " " + string + "<br>")
-    // document.write("Convert:" + " " + string.toUpperCase() + "<br>");
-    // document.write("Convert:" + " " + string.toLowerCase());
+    let numbers = prompt("Nhập số vào đây");
+    let mang = numbers.toString();
+    const result = [mang[0]];
 
-    // let infor = prompt("Nhap mot chuoi");
-    // let array = infor.toString();
-    // let result = "";
-    // for (let i = 0; i < array.length ; i++) {
-    //     if (array[i] == array[i].toLowerCase()) {
-    //         result += array[i].toUpperCase();
-    //     } else {
-    //         result += array[i].toLowerCase();}
-    // }
-    // document.write("Result:" + " "+ result);
+    for (let x = 1; x < mang.length; x++) {
+        if ((mang[x - 1] % 2 === 0) && (mang[x] % 2 === 0)) {
+            result.push('-', mang[x]);
+            console.log(mang[x - 1])
+            console.log(mang[x])
+        } else {
+            result.push(mang[x]);
+        }
+    }
+    console.log(result.join(''));
+    // Bài3
+
+    let string = "bABY mUỐN nÓi lÀ bABY kHÔNG mUỐN yÊU 1 aI"
+    document.write("Examble:" + " " + string + "<br>")
+    document.write("Convert:" + " " + string.toUpperCase() + "<br>");
+    document.write("Convert:" + " " + string.toLowerCase());
+
+    let infor = prompt("Nhap mot chuoi");
+    let array = infor.toString();
+    let result = "";
+    for (let i = 0; i < array.length ; i++) {
+        if (array[i] == array[i].toLowerCase()) {
+            result += array[i].toUpperCase();
+        } else {
+            result += array[i].toLowerCase();}
+    }
+    document.write("Result:" + " "+ result);
 
 </script>
 </body>

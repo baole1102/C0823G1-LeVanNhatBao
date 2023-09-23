@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Temperature</h2>
+<p id="result"></p>
+<script>
+    let input = +prompt("Nhập số muốn đổi ")
+    class Temperature {
+        constructor(doC) {
+            this.doC = doC;
+        }
+
+        getdoF() {
+            return "Nhiệt độ:" + " " + this.doC + "C" + " " + "=" + ' ' + ((9 / 5) * this.doC + 32) + "" + "F"
+        }
+
+        getdoK() {
+            return "Nhiệt độ:" + " " + this.doC + "C" + " " + "=" + ' ' + (this.doC + 273.15) + "" + "K"
+        }
+    }
+
+    let result = new Temperature(input);
+    let convertDoF = result.getdoF();
+    let convertDoK = result.getdoK();
+    document.getElementById("result").innerHTML = convertDoF + "<br>" + convertDoK
+</script>
+</body>
+</html>
