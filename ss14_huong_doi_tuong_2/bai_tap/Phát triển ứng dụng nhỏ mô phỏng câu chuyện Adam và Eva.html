@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weight, quantity) {
+            this.weight = weight
+            this.quantity = quantity
+        }
+
+        getWeight() {
+            return this.weight
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        getQuantity() {
+            return this.quantity
+        }
+
+        setQuantity(quantity) {
+            this.quantity = quantity;
+        }
+
+        decrease() {
+            if (!this.isEmpty()) {
+                this.quantity--;
+            } else {
+                alert("Số lượng táo đã hết!")
+            }
+        }
+
+        isEmpty() {
+            return this.quantity <= 0;
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight, apple) {
+            this.name = name
+            this.gender = gender;
+            this.weight = weight;
+            this.apple = apple;
+        }
+
+        getName() {
+            return this.name
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        getGender() {
+            return this.gender;
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        getApple() {
+            return this.apple;
+        }
+
+        setApple(apple) {
+            this.apple = apple;
+        }
+
+        eat() {
+            if (this.apple.isEmpty()) {
+                alert("Táo đã hết!")
+            } else {
+                this.apple.decrease();
+                this.weight += this.apple.getWeight();
+            }
+        }
+    }
+    let apple = new Apple(2, 10)
+    let toan = new Human("Toàn", true, 60, apple);
+    let bao = new Human("Bảo", false, 60, apple);
+    // console.log(toan, apple)
+    // toan.eat()
+    // console.log(toan, apple)
+    console.log(apple.isEmpty())
+    while (apple.isEmpty() !== true ) {
+        console.log(apple.isEmpty())
+        toan.eat(apple)
+        document.write("Toàn ăn trái ác qủy " + "<br>")
+        document.write( "Trái ác quỷ còn được :"+ apple.getQuantity()+ " " +"trái"+ "<br>")
+        document.write("Cân nặng của Toàn là: "+ " " + toan.getWeight() + " "+"Kí lô"+"<br>")
+        bao.eat(apple)
+        document.write("Bảo ăn trái ác qủy" + "<br>")
+        document.write( "Trái ác quỷ còn được :"+ apple.getQuantity()+ " " +"trái"+ "<br>")
+        document.write("Cân nặng của Bảo là: "+ " " + bao.getWeight() + " "+"Kí lô"+"<br>")
+    }
+
+</script>
+</body>
+</html>
