@@ -3,35 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        button {
+            width: 100px;
+            height: 50px;
+            background-color: aquamarine;
+            border-radius: 5px;
+            border: yellow 1px solid;
+            cursor: pointer;
+            font-size: 15px;
+            color: #e05b5b;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background-color: aqua;
+        }
+
+        h2 {
+            margin-left: 72px;
+            color: #f3afaf;
+        }
+    </style>
 </head>
 <body>
-    <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+<h2>Iphone</h2>
+<table>
+    <tr>
+        <td>
+            <button onclick="tunrOn()" type="button">Turn On</button>
+        </td>
+        <td>
+            <button onclick="tunrOff()" type="button">Turn Off</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="battery()" type="button">Battery</button>
+        </td>
+        <td>
+            <button onclick="status()" type="button">Status</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="message()" type="button">Message</button>
+        </td>
+        <td>
+            <button onclick="sent()" type="button">Sent</button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button onclick="inbox()" type="button">Check inbox</button>
+        </td>
+    </tr>
+</table>
 <script>
-    function Circle (x,y,radius){
-        this.x= x;
-        this.y =y;
-        this.radius = radius;
+
+
+    class Nokia {
+        constructor(battery, inbox, status, turn, message, sent) {
+            this.battery = battery;
+            this.inbox = inbox;
+            this.status = true;
+            this.turn = true;
+            this.message = message;
+            this.sent = sent
+        }
+
+        setBattery() {
+            if (this.battery > 15) {
+                alert("Pin:" + " " + this.battery + "%")
+            } else {
+                alert("Pin yeu")
+            }
+            return this.battery;
+        }
+
+        setInbox() {
+            if (this.inbox > 100) {
+                alert("Het dung luong")
+            }
+            return this.inbox
+        }
+
+        setStatus() {
+            if (this.status === false) {
+                alert("Dang hoat dong")
+            } else {
+                alert("An danh")
+            }
+            return this.status
+        }
+
+        setSent() {
+            alert("Ban da gui tin nhan")
+            return this.sent
+        }
+
+        tunrOn() {
+            alert("Ban da bat")
+            return this.turn
+        }
+
+        tunrOff() {
+            alert("Ban da tat")
+            return !this.turn
+        }
+
+        setMessage() {
+            return this.message
+        }
+
     }
-    function getRamdomHex () {
-        return Math.floor(Math.random()*255)
+
+    let operatePhone = new Nokia(50, 120, false, true)
+
+    function battery() {
+        operatePhone.setBattery();
     }
-    function getRamdomcolor (){
-        let red = getRamdomHex();
-        let blue = getRamdomHex();
-        let green = getRamdomHex();
-        return "rgb(" + red + "," + blue + "," + green +")";
+
+    function inbox() {
+        operatePhone.setInbox();
     }
-    function createCircle(){
-        let a = document.getElementById("myCanvas").getContext("2d");
-        let radius =  Math.floor(Math.random()*80);
-        let color = getRamdomcolor();
-        let circle = new Circle(500, 500, radius);
-        a.beginPath();
-        a.arc(circle.x,circle.y,circle.radius,0,2*Math.PI);
-        a.fillStyle = color
-        a.fill()
+
+    function status() {
+        operatePhone.setStatus();
     }
-    createCircle();
+
+    function tunrOn() {
+        operatePhone.tunrOn();
+    }
+
+    function tunrOff() {
+        operatePhone.tunrOff();
+    }
+
+    function message() {
+        let input = prompt("Soan tin nhan")
+        operatePhone.setMessage(input);
+    }
+
+    function sent() {
+        operatePhone.setSent()
+    }
+
+    // let battery = operatePhone.setBattery();
+    // let inbox = operatePhone.setInbox();
+    // let status = operatePhone.setStatus();
+    // let tunrOn = operatePhone.tunrOn();
+    // let tunrOff = operatePhone.tunrOff();
+    // let message = operatePhone.setMessage();
+    // let sent = operatePhone.setSent()
 </script>
 </body>
 </html>

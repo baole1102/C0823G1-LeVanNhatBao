@@ -7,12 +7,12 @@
 <body>
 <button type="button" onclick="findStar()">Bấm vào đây</button>
 <script>
-    let starNames = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', ' Altair', 'Dubhe', 'Regulus'];
+    let starNames = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
     let starValue = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
     function findStar() {
         let value = false;
         let notify = prompt("Tên ngôi sao");
-        for (let i = 0; i < starValue.length; i++) {
+        for (let i = 0; i < starNames.length; i++) {
             if (notify === starNames[i]) {
                 value = true;
                 alert("Ngôi sao tên là:" + ' ' + starValue[i]);
