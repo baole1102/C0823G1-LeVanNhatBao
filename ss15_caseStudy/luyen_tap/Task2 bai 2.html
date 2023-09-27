@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let star = "*";
+    let doubleStar = "**";
+    let space = "&nbsp&nbsp"
+    let result = ""
+    let h = +prompt("Nhap chieu cao")
+
+    document.write("<div style='text-align: center;' >")
+    for (let i = 0; i < h; i++) {
+        for (let j = h - 1; j < h; j++) {
+            if (i === 0 && j === h - 1) {
+                result += star
+            } else {
+                result += doubleStar
+            }
+            document.write(result)
+        }
+        document.write("<br>")
+    }
+    document.write("</div>");
+</script>
+</body>
+</html>

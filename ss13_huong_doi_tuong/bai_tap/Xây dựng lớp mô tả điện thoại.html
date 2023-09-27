@@ -24,41 +24,60 @@
             margin-left: 72px;
             color: #f3afaf;
         }
+
+        .container {
+            display: flex;
+        }
     </style>
 </head>
 <body>
-<h2>Iphone</h2>
-<table>
-    <tr>
-        <td>
-            <button onclick="tunrOn()" type="button">Turn On</button>
-        </td>
-        <td>
-            <button onclick="tunrOff()" type="button">Turn Off</button>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <button onclick="battery()" type="button">Battery</button>
-        </td>
-        <td>
-            <button onclick="status()" type="button">Status</button>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <button onclick="message()" type="button">Message</button>
-        </td>
-        <td>
-            <button onclick="sent()" type="button">Sent</button>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <button onclick="inbox()" type="button">Check inbox</button>
-        </td>
-    </tr>
-</table>
+<div class="container">
+    <div>
+        <h2>Nokia</h2>
+        <table>
+            <tr>
+                <td>
+                    <button onclick="tunrOn()" type="button">Turn On</button>
+                </td>
+                <td>
+                    <button onclick="tunrOff()" type="button">Turn Off</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="battery()" type="button">Battery</button>
+                </td>
+                <td>
+                    <button onclick="status()" type="button">Status</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="message()" type="button">Message</button>
+                </td>
+                <td>
+                    <button onclick="sent()" type="button">Sent</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick="inbox()" type="button">Check inbox</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h2>Iphone</h2>
+        <table>
+            <tr>
+                <td colspan="2">
+                    <button onclick="inbox()" type="button">Check inbox</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
 <script>
     class Nokia {
         constructor(battery, inbox, status, turn, message, sent) {
@@ -67,7 +86,7 @@
             this.status = true;
             this.turn = true;
             this.message = message;
-            this.sent = sent
+            this.sent = sent;
         }
 
         setBattery() {
@@ -76,14 +95,12 @@
             } else {
                 alert("Pin yeu")
             }
-            return this.battery;
         }
 
         setInbox() {
             if (this.inbox > 100) {
                 alert("Het dung luong")
             }
-            return this.inbox
         }
 
         setStatus() {
@@ -92,59 +109,79 @@
             } else {
                 alert("An danh")
             }
-            return this.status
         }
 
         setSent() {
             alert("Ban da gui tin nhan")
-            return this.sent
+            return this.sent;
         }
 
         tunrOn() {
             alert("Ban da bat")
-            return this.turn
+            return this.turn;
         }
 
         tunrOff() {
             alert("Ban da tat")
-            return !this.turn
+            return !this.turn;
         }
 
         setMessage() {
-            return this.message
+            return this.message;
         }
-
     }
 
-    let operatePhone = new Nokia(50, 120, false, true)
+    class Iphone {
+        constructor(store) {
+            this.store = store
+        }
+
+        getStore() {
+            return this.store;
+        }
+        setStore (store){
+            this.store = store;
+        }
+        checkStore (){
+            alert(message)
+            this.store ++
+        }
+    }
+
+    let operateNokia = new Nokia(50, 500, false, true)
+    let operateIphone = new Iphone(50)
 
     function battery() {
-        operatePhone.setBattery();
+        operateNokia.setBattery();
+    }
+
+    function store () {
+        operateIphone.checkStore();
     }
 
     function inbox() {
-        operatePhone.setInbox();
+        operateNokia.setInbox();
     }
 
     function status() {
-        operatePhone.setStatus();
+        operateNokia.setStatus();
     }
 
     function tunrOn() {
-        operatePhone.tunrOn();
+        operateNokia.tunrOn();
     }
 
     function tunrOff() {
-        operatePhone.tunrOff();
+        operateNokia.tunrOff();
     }
 
     function message() {
         let input = prompt("Soan tin nhan")
-        operatePhone.setMessage(input);
+        operateNokia.setMessage(input);
     }
 
     function sent() {
-        operatePhone.setSent()
+        operateNokia.setSent()
     }
 </script>
 </body>
