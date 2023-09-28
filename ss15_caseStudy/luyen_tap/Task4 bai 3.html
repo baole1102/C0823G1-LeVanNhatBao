@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let s1 = "aabcc"
+    let s2 = "adcaa"
+    function commonCharacterCount(a, b) {
+        let newArr1 = a.split('');
+        let newArr2 = b.split('');
+        // console.log(newArr1,newArr2)
+        let count = 0;
+        for (let i = 0; i < newArr1.length; i++) {
+            for (let j = 0; j < newArr2.length; j++) {
+                if (newArr1[i] === newArr2[j]) {
+                    count++
+                    newArr2.splice(j, 1)
+                    break;
+                }
+            }
+            // console.log(newArr2)
+        }
+        console.log(count)
+    }
+    commonCharacterCount(s1, s2)
+</script>
+</body>
+</html>
