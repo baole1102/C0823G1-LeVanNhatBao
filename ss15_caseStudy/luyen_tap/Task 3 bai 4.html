@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root"></div>
+<script>
+    let sum = 0;
+   do {
+       a = + prompt(
+           '1: Cafe ' +
+           '2: Cam vắt' +
+           '3: Nước ép cà rốt' +
+           '4:Nước ép cà chua' +
+           '5:Nước lọc ' +
+           '6:Nước dừa' +
+           '7: Hủy order')
+    switch (a){
+        case 1:
+            let b = prompt("Số lượng mua");
+            sum += b*7000
+            break;
+        case 2:
+            let c = prompt("Số lượng mua");
+            sum += c*10000
+            break;
+        case 3:
+            let d = prompt("Số lượng mua");
+            sum += d*15000
+            break;
+        case 4:
+            let e = prompt("Số lượng mua");
+            sum += e*15000
+            break;
+        case 5:
+            let f = prompt("Số lượng mua");
+            sum += f*5000
+            break;
+        case 6:
+            let h = prompt("Số lượng mua");
+            sum += h*7000
+            break;
+        case 7:
+            break;
+    }
+   }while (a !== 7)
+    alert("Tổng tiền cần trả là :"+" "+sum+" "+"VND")
+</script>
+</body>
+</html>
+
+
+

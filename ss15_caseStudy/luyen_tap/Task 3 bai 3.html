@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrOne = [1,2,3];
+    let arrTwo = [3,4,2];
+    let position = 0
+    let max = arrOne [0] / arrTwo[0]
+    for (i = 1 ; i < arrOne.length ; i ++){
+        if ( max < (arrOne [i] / arrTwo[i]) ){
+            max = arrOne [i] / arrOne[i]
+            position = i
+        }
+       // document.write(max)
+    }
+    console.log(position)
+
+    // document.write("Phân số lớn nhất "+ arrOne[i] +"%"+ arrTwo[i] +"="+max+"tại vị trí thứ"+i)
+</script>
+</body>
+</html>
