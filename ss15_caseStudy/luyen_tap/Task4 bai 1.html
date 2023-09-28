@@ -9,17 +9,17 @@
     let infor = prompt(" Nhập từ vào ")
     let newArr = infor.split(" ")
     let result = "";
-    let a = []
-    for (let i = 0; i < newArr.length ; i++ ){
+    let a = [];
+    for (let i = 0; i < newArr.length; i++) {
         let b = newArr[i].split('')
         console.log(b)
-        for (let j = 0; j < b.length;j++ ){
-           if  (j===0){
-            result += b[j].toUpperCase();
-               console.log(result)
-           }else {
-               result += b[j].toLowerCase()
-           }
+        for (let j = 0; j < b.length; j++) {
+            if (j === 0) {
+                result += b[j].toUpperCase();
+                console.log(result)
+            } else {
+                result += b[j].toLowerCase()
+            }
         }
     }
     document.write(result)
