@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid black;
+            padding: 20px;
+            margin: 20px;
+            max-width: 500px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<!-- Iphone -->
+<div class="box">
+    <h2>Iphone</h2>
+    <div>
+        <button onclick="handleTurnOnMobile('Iphone')">Bật điện thoại</button>
+        <button onclick="handleTurnOffMobile('Iphone')">Tắt điện thoại</button>
+        <button onclick="handleCheckStatus('Iphone')">
+            Kiểm tra trạng thái
+        </button>
+        <button onclick="handleChangeBattery('Iphone')">Sạc pin</button>
+        <h4>Pin: <span id="battery">100%</span></h4>
+    </div>
+    <input id="input" type="text" oninput="handleIphoneChange(event)"/>
+    <button onclick="handleSendMessage('Iphone')">Gửi tin nhắn</button>
+    <button onclick="handleCheckMessage('Iphone')">Tin nhắn đã gửi</button>
+</div>
+<!-- Nokia -->
+<div class="box">
+    <h2>Nokia</h2>
+    <div>
+        <button onclick="handleTurnOnMobile('Nokia')">Bật điện thoại</button>
+        <button onclick="handleTurnOffMobile('Nokia')">Tắt điện thoại</button>
+        <button onclick="handleCheckStatus('Nokia')">
+            Kiểm tra trạng thái
+        </button>
+        <button onclick="handleChangeBattery('Nokia')">Sạc pin</button>
+        <h4>Pin:<span id="battery1">100%</span></h4>
+    </div>
+    <input id="input1" type="text" oninput="handleNokiaChange(event)"/>
+    <button onclick="handleSendMessage('Nokia')">Gửi tin nhắn</button>
+    <button onclick="handleCheckMessage('Nokia')">Xem tin nhắn</button>
+</div>
+<script>
+    class DienThoai {
+        constructor(pin, tinDangSoanThao, hopThuDen, tinDaGui, trangThai, ten) {
+            this.pin = pin;
+            this.tinDangSoanThao = tinDangSoanThao;
+            this.hopThuDen = hopThuDen;
+            this.tinDaGui = tinDaGui;
+            this.trangThai = trangThai;
+            this.ten = ten;
+        }
+
+        getPin() {
+            return this.pin;
+        }
+
+        setPin(pin) {
+            this.pin = pin;
+        }
+
+        getTinDangSoanThao() {
+            return this.tinDangSoanThao;
+        }
+
+        setTinDangSoanThao(tinDangSoanThao) {
+            this.tinDangSoanThao = tinDangSoanThao;
+        }
+
+        getHopThuDen() {
+            return this.hopThuDen;
+        }
+
+        setHopThuDen(hopThuDen) {
+            this.hopThuDen = hopThuDen;
+        }
+
+        getTinDaGui() {
+            return this.tinDaGui;
+        }
+
+        setTinDaGui(tinDaGui) {
+            this.tinDaGui = tinDaGui;
+        }
+
+        getTrangThai() {
+            return this.trangThai;
+        }
+
+        setTrangThai(trangThai) {
+            this.trangThai = trangThai;
+        }
+
+        getTen() {
+            return this.ten;
+        }
+
+        setTen(ten) {
+            this.ten = ten;
+        }
+
+        giamPin() {
+            if (this.pin > 0) {
+                this.pin--;
+            } else {
+                this.trangThai = false;
+                alert(`Điện thoại ${this.ten} đã hết pin!`);
+            }
+        }
+
+        kiemTraTrangThai() {
+            if (this.trangThai) {
+                alert(`Điện thoại ${this.ten} đang bật!`);
+            } else {
+                alert(`Điện thoại ${this.ten} đang tắt!`);
+            }
+            this.giamPin();
+        }
+
+        batDienThoai() {
+            if (this.trangThai) {
+                alert(`Điện thoại ${this.ten} đang được bật rồi!`);
+            } else {
+                this.trangThai = true;
+                alert(`Điện thoại ${this.ten} bật!`);
+            }
+        }
+
+        tatDienThoai() {
+            if (!this.trangThai) {
+                alert(`Điện thoại ${this.ten} đang tắt rồi!`);
+            } else {
+                this.trangThai = false;
+                alert(`Điện thoại ${this.ten} tắt!`);
+            }
+        }
+
+        guiTinNhan(tinNhan, thietBiNhanTin) {
+            if (this.trangThai) {
+                this.tinDaGui.push(tinNhan);
+                thietBiNhanTin.getHopThuDen().push(tinNhan);
+                this.giamPin();
+                document.getElementById('battery').innerHTML = iphone.getPin() + "%"
+                document.getElementById('battery1').innerHTML = nokia.getPin() + "%"
+
+            } else {
+                alert(`${this.ten} chưa được bật!`);
+            }
+        }
+
+        sacPin() {
+            if (this.pin >= 100) {
+                alert(`${this.ten} đã đầy pin, không cần sạc nữa!`);
+            } else {
+                this.pin = 100;
+                document.getElementById('battery').innerHTML = iphone.getPin() + "%"
+                document.getElementById('battery1').innerHTML = nokia.getPin() + "%"
+                console.log(`${this.ten} đã sạc đầy pin!`);
+            }
+        }
+
+        checkMessage(tinNhan) {
+            if (this.trangThai) {
+                getHopThuDen(tinNhan)
+                this.giamPin();
+                document.getElementById('battery').innerHTML = iphone.getPin() + "%"
+                document.getElementById('battery1').innerHTML = nokia.getPin() + "%"
+            } else {
+                alert(`${this.ten} chưa được bật!`);
+            }
+        }
+    }
+
+    let iphone = new DienThoai(100, "", [], [], true, "Iphone");
+    let nokia = new DienThoai(100, "", [], [], true, "Nokia");
+
+    function handleCheckStatus(tenDienThoai) {
+        switch (tenDienThoai) {
+            case "Iphone":
+                iphone.kiemTraTrangThai();
+                break;
+            case "Nokia":
+                nokia.kiemTraTrangThai();
+                break;
+            default:
+                break;
+        }
+    }
+
+    function handleTurnOnMobile(tenDienthoai) {
+        switch (tenDienthoai) {
+            case "Iphone":
+                iphone.batDienThoai();
+                break;
+            case "Nokia":
+                nokia.batDienThoai();
+                break;
+            default:
+                break;
+        }
+    }
+
+    function handleTurnOffMobile(tenDienthoai) {
+        switch (tenDienthoai) {
+            case "Iphone":
+                iphone.tatDienThoai();
+                break;
+            case "Nokia":
+                nokia.tatDienThoai();
+                break;
+            default:
+                break;
+        }
+    }
+
+    function handleIphoneChange(event) {
+        if (iphone.getTrangThai()) {
+            let value = event.target.value;
+            iphone.setTinDangSoanThao(value);
+        } else {
+            event.target.value = "";
+            alert(`${iphone.getTen()} chưa được bật!`);
+        }
+    }
+
+    function handleNokiaChange(event) {
+        if (nokia.getTrangThai()) {
+            let value = event.target.value;
+            nokia.setTinDangSoanThao(value);
+        } else {
+            event.target.value = "";
+            alert(`${nokia.getTen()} chưa được bật!`);
+        }
+    }
+
+    function handleSendMessage(tenDienthoai) {
+        switch (tenDienthoai) {
+            case "Iphone":
+                let iphoneMessage = iphone.getTinDangSoanThao();
+                iphone.guiTinNhan(iphoneMessage, nokia);
+                document.getElementById('input').value = " "
+                break;
+            case "Nokia":
+                let nokiaMessage = nokia.getTinDangSoanThao();
+                nokia.guiTinNhan(nokiaMessage, iphone);
+                document.getElementById('input1').value = " "
+                break;
+            default:
+                break;
+        }
+        console.log({nokia, iphone});
+    }
+
+    function handleChangeBattery(tenDienthoai) {
+        switch (tenDienthoai) {
+            case "Iphone":
+                iphone.sacPin();
+                break;
+            case "Nokia":
+                nokia.sacPin();
+                break;
+            default:
+                break;
+        }
+    }
+
+    function handleCheckMessage(tenDienthoai) {
+        switch (tenDienthoai) {
+            case "Iphone":
+                let iphoneMessage = iphone.getTinDangSoanThao();
+                alert(nokia.getHopThuDen())
+                iphone.getHopThuDen(iphoneMessage);
+                break;
+            case "Nokia":
+                let nokiaMessage = nokia.getTinDangSoanThao();
+                nokia.getHopThuDen(nokiaMessage);
+                alert(nokia.getHopThuDen())
+                break;
+            default:
+                break;
+        }
+        console.log({nokia, iphone});
+    }
+</script>
+</body>
+</html>

@@ -7,30 +7,28 @@
 <body>
 <script>
     let star = "*";
-    let doubleStar = "**";
     let space = "&nbsp&nbsp"
-    let result = ""
     let h = +prompt("Nhap chieu cao")
 
-    // document.write("<div style='text-align: ;' >")
-    // for (let i = 0; i < h; i++) {
-    //     for (let j = h - 1; j < h; j++) {
-    //             result += doubleStar
-    //
-    //         document.write(result)
-    //     }
-    //     document.write("<br>")
-    // }
-    // document.write("</div>");
-
-
-let count = 0;
-    for ( let i =1; h<= count ; i ++){
-        count++
-        if (i % 2 !== 0 ){
-            console.log(i)
+    let count = 0;
+    document.write("<div style='text-align: center'>")
+    for (let i = 1; h > count; i++) {
+        if (i % 2 !== 0) {
+            count++
+            for (j = 0; j < i; j++) {
+                if (j === 0 || j + 1 === i) {
+                    document.write(star)
+                } else if (count === h) {
+                    document.write(star)
+                } else {
+                    document.write(space)
+                }
+            }
+            document.write("<br>")
         }
     }
+    document.write("</div>")
+
 </script>
 </body>
 </html>
