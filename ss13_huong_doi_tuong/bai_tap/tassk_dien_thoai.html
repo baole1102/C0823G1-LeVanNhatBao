@@ -57,11 +57,9 @@
             this.trangThai = trangThai;
             this.ten = ten;
         }
-
         getPin() {
             return this.pin;
         }
-
         setPin(pin) {
             this.pin = pin;
         }
@@ -177,10 +175,8 @@
             }
         }
     }
-
     let iphone = new DienThoai(100, "", [], [], true, "Iphone");
     let nokia = new DienThoai(100, "", [], [], true, "Nokia");
-
     function handleCheckStatus(tenDienThoai) {
         switch (tenDienThoai) {
             case "Iphone":
@@ -193,7 +189,6 @@
                 break;
         }
     }
-
     function handleTurnOnMobile(tenDienthoai) {
         switch (tenDienthoai) {
             case "Iphone":
@@ -206,7 +201,6 @@
                 break;
         }
     }
-
     function handleTurnOffMobile(tenDienthoai) {
         switch (tenDienthoai) {
             case "Iphone":
