@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <td>
+                <button onclick="addMembers()">Thêm mới học viên</button>
+            </td>
+            <td>
+                <button onclick="editInfo ()">Sửa thông tin học viên</button>
+            </td>
+            <td>
+                <button onclick="deleteInfo()">Xóa học viên</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="container"></div>
+<script>
+    class Student {
+        constructor(id, name, lop, email, date, module) {
+            this.identify = id;
+            this.name = name;
+            this.classRoom = lop;
+            this.email = email;
+            this.date = date;
+            this.module = module
+        }
+
+        getName() {
+            return this.name
+        }
+
+        getId() {
+            return this.identify
+        }
+
+        getClass() {
+            return this.classRoom
+        }
+
+        getEmail() {
+            return this.email
+        }
+
+        getDate() {
+            return this.date
+        }
+
+        getModule() {
+            return this.module
+        }
+
+        addStudent() {
+
+        }
+    }
+    let students = []
+    function showList() {
+        let container = "    <table cellpadding=\"10\" border=\" 1\">\n" +
+            "        <tr>\n" +
+            "            <td>Mã sinh viên</td>\n" +
+            "            <td>Tên</td>\n" +
+            "            <td>Lớp</td>\n" +
+            "            <td>Email</td>\n" +
+            "            <td>Ngày sinh</td>\n" +
+            "        </tr>\n";
+        for (let i = 0; i < students.length; i++) {
+            container += "<tr>\n" +
+                "            <td>" + "HV000" +students[i].getId() + "</td>\n" +
+                "            <td>" + students[i].getName() + "</td>\n" +
+                "            <td>" + students[i].getClass() + "</td>\n" +
+                "            <td>" + students[i].getEmail() + "</td>\n" +
+                "            <td>" + students[i].getDate() + "</td>\n" +
+                "        </tr>\n";
+        }
+        container += "</table>";
+        document.getElementById("container").innerHTML = container;
+    }
+    showList()
+    function addMembers() {
+        let id = prompt();
+        let name = prompt();
+        let lop = prompt();
+        let email = prompt();
+        let birthday = prompt();
+        let module = prompt();
+        let student = new Student(id, name, lop, email, birthday, module);
+        students.push(student);
+        showList()
+    }
+    function deleteInfo() {
+        let count = 0
+        let checkId = prompt("Nhập id sinh viên muốn xóa")
+        for (let i = 0; i < students.length; i++) {
+            if (checkId === students[i].getId()) {
+                students.splice(i, 1)
+                count = 1
+            }
+        }
+        if (count === 0) {
+            alert("Sinh viên không tồn tại")
+        }
+        showList()
+    }
+    function editInfo (){
+        let edit = prompt("Mã học sinh cần sửa")
+        let count = 0;
+        for (let i = 0; i < students.length; i++) {
+            if (edit === students[i].getId()) {
+                let id = prompt();
+                let name = prompt();
+                let lop = prompt();
+                let email = prompt();
+                let birthday = prompt();
+                let module = prompt();
+                students = new Student(id, name, lop, email, birthday, module);
+                count = 1
+            }
+        }
+        if (count === 0) {
+            alert("Sinh viên không tồn tại")
+        }
+        showList()
+    }
+
+</script>
+</body>
+</html>

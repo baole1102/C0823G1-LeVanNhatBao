@@ -6,21 +6,19 @@
 </head>
 <body>
 <script>
-    let a = [4, 5, 4, 7, 2, 5, 3, 5, 3]
-    let b = [7, 2, 5, 6]
-    let c = []
-    for (let i = 0; i < b.length; i++) {
-        for (let j = 0; j < a.length; j++) {
-            if (a[i] === b[i]) {
-                break;
-            } else {
-                c.push(b[i])
+    let arrA = [7, 2, 5, 3, 1, 2]
+    let arrB = [7, 2, 5, 4, 6, 3, 1, 2]
+    let arr = []
+
+    for (let i = 0; i < arrB.length; i++) {
+        for (let j = 0; j < arrA.length; j++) {
+            if (arrA.indexOf(arrB[i]) === -1) {
+                arr.push(arrB[i])
                 break;
             }
         }
     }
-    console.log(c)
-
+    alert(arr)
 </script>
 </body>
 </html>
