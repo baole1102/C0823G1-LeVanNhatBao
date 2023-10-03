@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid black;
+            padding: 20px;
+            margin: 20px;
+            max-width: 500px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<!-- Iphone -->
+<div class="box">
+    <h2>Iphone</h2>
+    <div>
+        <button onclick="handleTurnOnMobile('Iphone')">Bật điện thoại</button>
+        <button onclick="handleTurnOffMobile('Iphone')">Tắt điện thoại</button>
+        <button onclick="handleCheckStatus('Iphone')">
+            Kiểm tra trạng thái
+        </button>
+        <button onclick="handleChangeBattery('Iphone')">Sạc pin</button>
+        <h4>Pin: 100%</h4>
+    </div>
+    <input type="text" id="iphone"/>
+    <button onclick="handleSendMessage('Iphone')">Gửi tin nhắn</button>
+</div>
+<!-- Nokia -->
+<div class="box">
+    <h2>Nokia</h2>
+    <div>
+        <button onclick="handleTurnOnMobile('Nokia')">Bật điện thoại</button>
+        <button onclick="handleTurnOffMobile('Nokia')">Tắt điện thoại</button>
+        <button onclick="handleCheckStatus('Nokia')">
+            Kiểm tra trạng thái
+        </button>
+        <button onclick="handleChangeBattery('Nokia')">Sạc pin</button>
+        <h4>Pin: 100%</h4>
+    </div>
+    <input id="nokia" type="text"/>
+    <button onclick="handleSendMessage('Nokia')">Gửi tin nhắn</button>
+</div>
+<script>
+    class DienThoai {
+        constructor(pin, tinDangSoanThao, hopThuDen, tinDaGui, trangThai, ten) {
+            this.pin = pin;
+            this.tinDangSoanThao = tinDangSoanThao;
+            this.hopThuDen = hopThuDen;
+            this.tinDaGui = tinDaGui;
+            this.trangThai = trangThai;
+            this.ten = ten;
+        }
+
+        getPin() {
+            return this.pin
+        }
+
+        setPin(pin) {
+            this.pin = pin
+        }
+
+        getMessage() {
+            return this.tinDangSoanThao
+        }
+
+        setMessage(tinDangSoanThao) {
+            this.tinDangSoanThao = tinDangSoanThao
+        }
+
+        getHopThuDen() {
+            return this.hopThuDen
+        }
+
+        setHopThuDen(hopThuDen) {
+            this.hopThuDen = hopThuDen
+        }
+
+        getTinNhanDaGui() {
+            return this.tinDaGui
+        }
+
+        setTinNhanDaGui(tinDaGui) {
+            this.tinDaGui = tinDaGui
+        }
+
+        getTrangThai() {
+            return this.trangThai
+        }
+
+        setTrangThai(trangthai) {
+            this.trangThai = trangthai
+        }
+
+        getTen() {
+            return this.ten
+        }
+
+        setTen(ten) {
+            this.ten = ten
+        }
+
+        batDienThoai() {
+            this.trangThai = true
+            alert("Dien thoai da bat")
+        }
+
+        tatDienThoai() {
+            this.trangThai = false
+            alert("Dien thoai da tat")
+        }
+
+        chechTrangThai() {
+            if (this.trangThai === true && this.pin > 0) {
+                alert('Dien thoai dang hoat dong')
+            } else {
+                alert("Dien thoai da tat")
+            }
+        }
+
+        sacPin() {
+            if (this.pin >= 100) {
+                alert("Điện thoại đã đầy pin")
+            } else if (this.pin > 0) {
+                alert(this.pin = 100)
+            }
+        }
+
+        guiTinNhan(tinnhan, phone) {
+            if (this.trangThai === true) {
+                phone.getHopThuDen().push(tinnhan)
+                this.tinDaGui.push(tinnhan)
+                this.giamPin();
+            } else {
+                alert('Chua bat dien thoai')
+            }
+        }
+
+        giamPin() {
+            if (this.pin > 0) {
+                this.pin--
+            } else {
+                this.trangThai = false
+                alert("Dien thoai het pin")
+            }
+        }
+    }
+
+    let iPhone = new DienThoai(100, '', [], [], true, "Iphone")
+    let nokia = new DienThoai(50, '', [], [], false, "Nokia")
+
+    function handleTurnOnMobile(Tendienthoai) {
+        switch (Tendienthoai) {
+            case "Iphone" :
+                iPhone.batDienThoai()
+                break;
+            case "Nokia":
+                nokia.batDienThoai()
+                break
+        }
+    }
+
+    function handleTurnOffMobile(Tendienthoai) {
+        switch (Tendienthoai) {
+            case "Iphone" :
+                iPhone.tatDienThoai()
+                break;
+            case "Nokia":
+                nokia.tatDienThoai()
+                break
+        }
+    }
+
+    function handleCheckStatus(Tendienthoai) {
+        switch (Tendienthoai) {
+            case "Iphone" :
+                iPhone.chechTrangThai()
+                break;
+            case "Nokia":
+                nokia.chechTrangThai()
+                break
+        }
+    }
+
+    function handleChangeBattery(Tendienthoai) {
+        switch (Tendienthoai) {
+            case "Iphone" :
+                iPhone.sacPin()
+                break;
+            case "Nokia":
+                nokia.sacPin()
+                break
+        }
+    }
+
+    function handleSendMessage(Tendienthoai) {
+        switch (Tendienthoai) {
+            case "Iphone" :
+                let content = document.getElementById('iphone').value;
+                console.log(content)
+                let iphoneMessage = iPhone.setMessage(content)
+                console.log(iphoneMessage)
+                iPhone.guiTinNhan(iphoneMessage,nokia)
+                break;
+            case "Nokia":
+                let content1 = document.getElementById('nokia').value;
+                let nokiaMessage = nokia.setMessage(content1)
+                nokia.guiTinNhan(nokiaMessage,iPhone)
+                break;
+        }
+        console.log({ nokia, iPhone });
+    }
+</script>
+</body>
+</html>

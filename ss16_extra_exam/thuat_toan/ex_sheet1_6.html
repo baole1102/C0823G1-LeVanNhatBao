@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let dictionary = "hue dep qua";
+    let array = dictionary.split("");
+    console.log(array)
+    let count = 0;
+    let arr = []
+    let checkArray = ["u", "e", 'o', 'a', 'i'];
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0 ; j < array.length; j++){
+            if (array[i]=== checkArray[j] ){
+                arr.push(checkArray[j])
+            }
+        }
+    }
+    document.write(arr);
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let infor = prompt(" Nhập từ vào ")
+    let newArr = infor.split(" ")
+    console.log(newArr)
+    function converUpper () {
+        let result = "";
+        for (let i = 0; i < newArr.length; i++) {
+            let b = newArr[i].split('')
+            for (let j = 0; j < b.length; j++) {
+                if (b[i] === b[j].toUpperCase()) {
+                    result += b[j].toLowerCase();
+                } else {
+                    result += b[j].toLowerCase()
+                }
+            }
+            result += " "
+            console.log(result)
+        }
+        document.write("Từ chuyển đổi: " + " " + result + "<br>")
+    }
+    converUpper()
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = "DaNang"
+    let newArr = str.match(/[A-Z][a-z]*/g);
+    console.log(newArr)
+    let arrResult = []
+    let convertResult;
+    let word = ''
+    for (let  i = 0 ; i < newArr.length ; i++){
+        word = newArr[i].toLowerCase()
+        arrResult.push(word )
+    }
+    console.log(arrResult)
+    convertResult = arrResult.join(' ')
+    console.log(convertResult)
+</script>
+</body>
+</html>

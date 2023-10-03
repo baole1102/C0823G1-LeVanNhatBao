@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1 = "aabcc";
+    let arr2 = "adcaa";
+    let newArr1 = arr1.split('')
+    let newArr2 = arr2.split('')
+    let count = 0;
+    for (let i = 0; i < newArr1.length; i++){
+        for (let j = 0; j < newArr2.length; j++){
+            if (newArr1[i]===newArr2[j]){
+                count ++
+                newArr2.splice(j,1)
+                break;
+            }
+        }
+    }
+    console.log(count)
+</script>
+</body>
+</html>

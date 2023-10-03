@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let infor = prompt(" Nhap so vao day")
+    console.log(typeof infor)
+    let converInfo = infor.split('')
+    console.log(converInfo)
+    let countChan = 0;
+    let countLe=0
+    for (let i = 0 ; i < converInfo.length ; i++){
+        if (converInfo[i]%2 === 0){
+            countChan++
+        }else {
+            countLe ++
+        }
+    }
+    if (countLe === countChan){
+        alert("Ok")
+    }else {
+        alert("NO")
+    }
+</script>
+</body>
+</html>

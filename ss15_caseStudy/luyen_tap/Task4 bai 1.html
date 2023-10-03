@@ -8,21 +8,35 @@
 <script>
     let infor = prompt(" Nhập từ vào ")
     let newArr = infor.split(" ")
-    let result = "";
-    let a = [];
-    for (let i = 0; i < newArr.length; i++) {
-        let b = newArr[i].split('')
-        console.log(b)
-        for (let j = 0; j < b.length; j++) {
-            if (j === 0) {
-                result += b[j].toUpperCase();
-                console.log(result)
-            } else {
-                result += b[j].toLowerCase()
-            }
-        }
-    }
-    document.write(result)
+    console.log(newArr)
+   function converUpper (){
+       let result = "";
+       for (let i = 0; i < newArr.length; i++) {
+           let b = newArr[i].split('')
+           console.log(b)
+           for (let j = 0; j < b.length; j++) {
+               if (j === 0) {
+                   result += b[j].toUpperCase();
+               } else {
+                   result += b[j].toLowerCase()
+               }
+           }
+           result += " "
+       }
+       console.log(result)
+       document.write("Từ chuyển đổi: "+ " "+result+"<br>")
+   }
+   converUpper()
+   function longestWord (){
+       let longest = newArr[0]
+       for (let i = 1; i< newArr.length; i++){
+           if (longest.length < newArr[i].length){
+               longest = newArr[i]
+           }
+       }
+      document.write("Từ dài nhất:"+ " "+longest+"<br>")
+   }
+   longestWord()
     // tRuong TaN HAI
 </script>
 </body>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr =  prompt("")
+    let convertArr = arr.split('')
+    console.log(arr)
+    function checkArr(a) {
+        for (let i = 0; i < a.length / 2; i++) { // 0 < 3
+            let cal = +a[i] * +a[i]; // 1 4
+            console.log(cal)
+            if (cal !== +a[i + a.length / 2]) { // 0+3 // 4 4 3 9
+                return false
+            }
+        }
+        return true
+    }
+
+    console.log(checkArr(convertArr))
+
+    // function examineArr(a) {
+    //     let newArr1 = []
+    //     let newArr2 = []
+    //     for (let i = 0; i < a.length / 2; i++) {
+    //         let newA = +convertArr[i];
+    //         newArr1.push(newA)
+    //     }
+    //     for (let i = a.length / 2; i < a.length; i++) {
+    //         let newB = +convertArr[i];
+    //         newArr2.push(newB)
+    //     }
+    //     console.log(newArr1)
+    //     console.log(newArr2)
+    //     for (let j = 0; j < newArr1.length; j++) {
+    //         if (newArr1[j] * newArr1[j] !== newArr2[j]) {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
+    //
+    //
+    // console.log(examineArr(convertArr))
+
+
+</script>
+</body>
+</html>

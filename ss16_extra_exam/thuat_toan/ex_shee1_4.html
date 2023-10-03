@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = prompt("Nhap vap day");
+    let countA = 0
+    let countB =0
+    for (let i =0 ; i< input.length ; i++){
+
+        for (let j = 0; j < input.length ; j++){
+            if (input[i]===input[j].toUpperCase()){
+                countA ++
+            }
+        }
+        for (let j = 0; j < input.length ; j++){
+            if (input[i]===input[j].toLowerCase()){
+                countB ++
+            }
+        }
+    }
+    if (countA === countB){
+        alert("True")
+    }else {
+        alert("False")
+    }
+</script>
+</body>
+</html>

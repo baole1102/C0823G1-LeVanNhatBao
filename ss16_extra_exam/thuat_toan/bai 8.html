@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let parent = [1,4,5,2,1];
+    let child = [1,2];
+    let arr =[];
+    flag = true;
+    let lap = 3;
+for (let i = 0 ; i < parent.length; i ++){
+    let count = 0
+    for (let j = 0; j < child.length; j++){
+        if (child[j] === parent[i]){
+            count ++;
+        }
+        if (count > 1){
+
+        }
+    }
+
+    console.log(count)
+}
+</script>
+</body>
+</html>
+
+
+function countSubarrayOccurrences(parent, child) {
+let count = 0; // Biến đếm số lần xuất hiện của mảng con trong mảng cha
+
+for (let i = 0; i < parent.length - child.length + 1; i++) {
+const subarray = parent.slice(i, i + child.length); // Tạo mảng con từ mảng cha
+const seen = new Set(); // Sử dụng Set để theo dõi các phần tử đã xem qua trong mảng con
+
+// Kiểm tra từng phần tử trong mảng con
+for (const element of subarray) {
+if (!seen.has(element) && subarray.filter(e => e === element).length < child.filter(e => e === element).length) {
+// Nếu phần tử chưa được xem qua và nó xuất hiện ít hơn trong mảng con
+break;
+}
+seen.add(element);
+}
+
+if (seen.size === child.length) {
+// Nếu tất cả các phần tử trong mảng con xuất hiện ít nhất 1 lần trong mảng cha
+count++;
+}
+}
+
+return count;
+}
+
+// Ví dụ
+const parentArray = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 5];
+const childArray = [1, 2, 3, 4];
+const result = countSubarrayOccurrences(parentArray, childArray);
+console.log(`Số lần xuất hiện của mảng con trong mảng cha là: ${result}`);

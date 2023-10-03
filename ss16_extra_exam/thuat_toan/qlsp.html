@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Add New Product</h3>
+<table>
+    <tr>
+        <td>
+            <input id="input" placeholder="New Product" type="text">
+        </td>
+        <td>
+            <button type="button" onclick="addProduct()">Add</button>
+        </td>
+        <td id="edit"></td>
+    </tr>
+</table>
+<div id="root"></div>
+<script>
+    let product = [
+        "Iphone",
+        "Nokia",
+        "Lock"
+    ]
+    function displayProduct() {
+        let container = `<table>
+                <tr>
+                     <td><h3>Display All Product</h3></td>
+                     <td></td>
+                     <td></td>
+                 </tr>`
+        for (let i = 0; i < product.length; i++) {
+            container += `<tr>
+                               <td> ${product[i]} </td>
+                              <td><button onclick="updateProduct(${i})">Edit</button></td>
+                             <td><button onclick="deleteProduct (${i})">Delete</button></td>
+
+                           </tr>`
+        }
+        container += `</table>`
+        document.getElementById("root").innerHTML = container;
+    }
+    displayProduct()
+    // Delete
+    function deleteProduct (index){
+       product.splice(index, 1)
+        displayProduct()
+    }
+// Addproduct
+    function addProduct(){
+        let input = document.getElementById('input').value;
+        product.push(input)
+        displayProduct()
+    }
+    //Update
+    function updateProduct(index){
+        document.getElementById('input').value = product[index];
+        let submit =`<button onclick="handeProduct(${index})">Chinh sua</button>`
+        document.getElementById("edit").innerHTML = submit
+    }
+    function handeProduct(index){
+       let newProduct = document.getElementById('input').value;
+       product[index]=newProduct;
+       displayProduct()
+    }
+</script>
+</body>
+</html>
