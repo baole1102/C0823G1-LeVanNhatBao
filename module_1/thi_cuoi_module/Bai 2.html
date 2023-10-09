@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = +prompt("Nhập độ dài mảng số nguyên");
+    let arr = [];
+    for (let i = 0; i < input; i++) {
+        let creatNewInput = +prompt("Nhập phần tử đ tính giá trị chính phương");
+        arr.push(creatNewInput);
+    }
+    console.log(arr)
+    if (arr.length <= 100) {
+        alert("Độ dài của mảng là:" + `${arr.length}`);
+    } else {
+        alert("Độ dài của mảng là:" + `${arr.length}` + " " + "lớn hơn 100");
+    }
+
+    let sum = 0;
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 1; j < arr[i]; j++) {
+            let checkNumber = j * j;
+            if (checkNumber === arr [i]) {
+                sum += arr[i];
+                newArr.push(arr[i]);
+            }
+        }
+    }
+    document.write("Các số chính phương có trong mảng gồm:" + " " + `${newArr}`);
+    document.write("<br>")
+    document.write("Tổng các số chính phương có trong mảng là:" + " " + `${sum}`);
+</script>
+</body>
+</html>

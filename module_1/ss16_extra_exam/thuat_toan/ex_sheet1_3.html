@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = +prompt(" Nhập mảng n ");
+    let arr = [];
+    for (let i = 1; i < input; i++) {
+        let b = +prompt("So phan tu tai vi tri" + `${i}`)
+        arr.push(b)
+    }
+    console.log(arr)
+
+        function checkInput(a) {
+            for (let i = 0; i < a.length; i++) {
+                if (a[i] > a[i + 1]) {
+                    return false
+                }
+            }
+            console.log(a)
+            return true
+        }
+
+
+        console.log(checkInput(arr))
+</script>
+</body>
+</html>

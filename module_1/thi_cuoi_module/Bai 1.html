@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let input = +prompt("Nhập n số");
+    if (input <= 500 && input > 0) {
+        let arr = [];
+        let result = 0;
+        for (let i = 0; i <= input; i++) {
+            if (input % i === 0) {
+                result += i;
+                arr.push(i);
+            }
+        }
+        document.write("Kết quả tổng ước số của" + `${input}` + " " + "là:" + `${result}`);
+        document.write('<br>');
+        document.write("Các ước số của" + `${input}` + " " + "là:" + `${arr}`);
+    } else {
+        do {
+            input = +prompt("Yêu cầu nhập lại n (n <= 500)");
+        } while (input > 500)
+    }
+
+</script>
+</body>
+</html>

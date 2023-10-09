@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        th {
+            color: red;
+        }
+
+        .header {
+            font-weight: 600;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #f6e4e4;
+            border-radius: 5px;
+            height: 30px;
+            font-size: 15px;
+            color: #949479;
+            border: 2px solid black;
+        }
+
+        button:hover {
+            background-color: mistyrose;
+        }
+    </style>
+</head>
+<body>
+<button style="margin-bottom: 20px" onclick="deleteFlyer()">Xóa chuyến bay</button>
+<div id=" root"></div>
+<script>
+    class Flyer {
+        constructor(codeFly, date, hour, location, visit) {
+            this.codeFly = codeFly;
+            this.date = date;
+            this.hour = hour;
+            this.location = location;
+            this.visit = visit;
+        }
+
+        getCodeFLy() {
+            return this.codeFly;
+        }
+
+        setCodeFly(codeFly) {
+            this.codeFly = codeFly;
+        }
+
+        getDate() {
+            return this.date;
+        }
+
+        setDate(date) {
+            this.date = date;
+        }
+
+        getHour() {
+            return this.hour;
+        }
+
+        setHour(hour) {
+            this.hour = hour;
+        }
+
+        getLocation() {
+            return this.location;
+        }
+
+        setLocation(location) {
+            this.location = location;
+        }
+
+        getVisit() {
+            return this.visit;
+        }
+
+        setVisit(visit) {
+            this.visit = visit;
+        }
+    }
+
+    let flyerOne = new Flyer("1", "11/02/2001", "5h", "Việt Nam", "Singapo");
+    let flyerTwo = new Flyer("2", "11/02/2001", "5h", "Hàn Quốc", "Nhật");
+    let flyerThree = new Flyer("3", "11/02/2001", "5h", "Trung Quốc", "Việt Nam");
+
+    let flies = [];
+    flies.push(flyerOne);
+    flies.push(flyerTwo);
+    flies.push(flyerThree);
+
+    function displayFlyer() {
+        let container = `<table border=" 1px" cellpadding="10">
+    <tr>
+        <th>Mã chuyến bay</th>
+        <th>Ngày bay</th>
+        <th>Giờ bay</th>
+        <th>Nơi đi</th>
+        <th>Nơi đến</th>
+    </tr>`;
+        for (let i = 0; i < flies.length; i++) {
+            container += ` <tr>
+        <td class="header">${"HX-" + flies[i].getCodeFLy()}</td>
+        <td>${flies[i].getDate()}</td>
+        <td>${flies[i].getHour()}</td>
+        <td>${flies[i].getLocation()}</td>
+        <td>${flies[i].getVisit()}</td>
+    </tr>`
+        }
+        container += `</table>`;
+        document.getElementById(" root").innerHTML = container;
+    }
+
+    displayFlyer();
+
+    // Delete
+    function deleteFlyer() {
+        let input = prompt("Nhập mã chuyến bay muốn xóa");
+        let checkConfirm = confirm("Bạn có muốn xóa chuyến bay này không");
+        let count = 0;
+        if (checkConfirm) {
+            for (let i = 0; i < flies.length; i++) {
+                if (input === flies[i].getCodeFLy()) {
+                    flies.splice(i, 1);
+                    count = 1;
+                }
+            }
+            if (count === 0) {
+                alert("Không tìm thấy");
+            }
+        }
+        displayFlyer();
+    }
+</script>
+</body>
+</html>

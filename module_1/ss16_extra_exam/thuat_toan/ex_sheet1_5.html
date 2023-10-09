@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = +prompt("Nhap so vao day");
+    let arr =[]
+    if (input % 2 === 0) {
+        for (let i = 1; i <= input; i++) {
+            let b = prompt("Nhap vi tri "+`${i}`)
+            arr.push(b)
+        }
+    }else {
+       do {
+           alert('Nhập số chẵn')
+           let a = +prompt("Nhap so vao day")
+       }while (a % 2 === 0)
+    }
+    console.log(arr)
+
+    function checkInput(a) {
+        for (let i = 0; i < a.length; i = i + 2) {
+            if (a[i] > a[i + 1]) {
+                return false
+            }
+        }
+        return true
+    }
+
+    console.log(checkInput(arr))
+</script>
+</body>
+</html>

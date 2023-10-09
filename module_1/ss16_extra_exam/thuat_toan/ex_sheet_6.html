@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = +prompt("Nhap so vao day")
+    let arr = []
+    for (let i = 0; i < input; i++) {
+        let b = prompt('Nhap so tai vi tri ' + `${i}`)
+        arr.push(b)
+    }
+    console.log(arr)
+
+    function demSoLuongSoLonNhat(arr) {
+        if (arr.length === 0) {
+            return 0; // Trường hợp mảng rỗng
+        }
+
+        let maxSoFar = arr[0]; // Số lớn nhất hiện tại
+        let count = 1; // Số lượng số lớn nhất
+
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] > maxSoFar) {
+                maxSoFar = arr[i];
+                count = 1; // Đặt lại số lượng nếu tìm thấy số lớn hơn
+            } else if (arr[i] === maxSoFar) {
+                count++; // Tăng số lượng nếu tìm thấy số bằng số lớn nhất
+            }
+        }
+
+        return count;
+    }
+
+    const mang = [1, 3, 6, 3, 6, 6, 6];
+    demSoLuongSoLonNhat(arr)
+
+    // Ví dụ
+
+    const soLuongSoLonNhat = demSoLuongSoLonNhat(arr);
+    console.log(`Số lượng số lớn nhất trong mảng là: ${soLuongSoLonNhat}`);
+</script>
+</body>
+</html>

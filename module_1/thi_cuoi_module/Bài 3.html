@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = +prompt("Nhập n số trong mảng");
+    let arr = [];
+    for (let i = 1; i <= input; i++) {
+        let creatArr = +prompt("Số ở vị trí" + " " + `${i}`);
+        arr.push(creatArr);
+    }
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        let firstNumber = parseInt(arr[i] / 10);
+        if (firstNumber % 2 !== 0) {
+            newArr.push(firstNumber);
+        }
+    }
+    document.write("Số nguyên đầu tiên là chữ số lẻ trong mảng là:" + " " + `${newArr}`);
+
+</script>
+</body>
+</html>
