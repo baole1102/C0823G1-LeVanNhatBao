@@ -2,7 +2,7 @@ package ss1_introduce_java.exc;
 
 import java.util.Scanner;
 
-public class Convert_number_to_word {
+public class ConvertNumberToWord {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập số để chuyển thành chữ");

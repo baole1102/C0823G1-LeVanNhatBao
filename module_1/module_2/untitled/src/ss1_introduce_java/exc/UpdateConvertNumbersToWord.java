@@ -2,7 +2,7 @@ package ss1_introduce_java.exc;
 
 import java.util.Scanner;
 
-public class update_convert_numbers_to_word {
+public class UpdateConvertNumbersToWord {
     public static void main(String[] args) {
         Scanner scanner = new  Scanner(System.in);
         System.out.println("Input number");

@@ -2,7 +2,7 @@ package ss1_introduce_java.exc;
 
 import java.util.Scanner;
 
-public class Convert_money {
+public class ConvertMoney {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         double moneyVND = 23000;
